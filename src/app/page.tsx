@@ -72,7 +72,7 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={LocalBusinessSchema()} />
       <Header />
-      <main>
+      <main id="main-content">
         {/* Hero */}
         <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-trust-dark text-white py-20 md:py-28 relative overflow-hidden">
           <div className="absolute inset-0 opacity-5">

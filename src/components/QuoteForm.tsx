@@ -2,26 +2,37 @@
 
 export default function QuoteForm() {
   return (
-    <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+    <form className="space-y-4" method="POST" action="#" onSubmit={(e) => {
+      e.preventDefault();
+      const form = e.currentTarget;
+      const data = new FormData(form);
+      const name = data.get("name");
+      const phone = data.get("phone");
+      const service = data.get("service");
+      if (!name || !phone || !service) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+      alert("Thanks! We'll call you back shortly.");
+      form.reset();
+    }}>
       <div className="grid sm:grid-cols-2 gap-4">
         <input
           type="text"
-          placeholder="Full Name"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+          name="name"
+          placeholder="Full Name *"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emergency focus:border-emergency outline-none"
           required
         />
         <input
           type="tel"
-          placeholder="Phone Number"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+          name="phone"
+          placeholder="Phone Number *"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emergency focus:border-emergency outline-none"
           required
         />
       </div>
-      <select
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white"
-        required
-      >
-        <option value="">What do you need?</option>
+      <select name="service" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emergency focus:border-emergency outline-none bg-white" required>
         <option>Emergency Towing</option>
         <option>Roadside Assistance</option>
         <option>Long Distance Towing</option>

@@ -14,7 +14,7 @@ export default function RoadsideAssistancePage() {
   return (
     <>
       <Header />
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
         <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Roadside Assistance in Hemet</h1>
         <p className="text-gray-600 text-lg mb-8">Whether you locked your keys in the car or need a jump start in the heat, we provide fast roadside assistance anywhere in the Hemet area.</p>

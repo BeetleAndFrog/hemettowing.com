@@ -13,7 +13,7 @@ export default function LongDistancePage() {
   return (
     <>
       <Header />
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
         <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Long Distance Towing</h1>
         <p className="text-gray-600 text-lg mb-8">Need your vehicle moved from Hemet to another city — or just across town? Our flatbed trucks handle it all.</p>
