@@ -192,6 +192,30 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {[
+                { q: "How fast do you respond?", a: "Average arrival time is 20-30 minutes within Hemet. Emergency calls get priority dispatch." },
+                { q: "Do you tow at night?", a: "24 hours a day, 7 days a week. Nights, weekends, holidays — if you're stuck, call us." },
+                { q: "How much does towing cost?", a: "Cost depends on distance and vehicle type. Call us for a free quote — no hidden fees." },
+                { q: "Do you accept insurance?", a: "We work with all major insurance providers. We can bill your provider directly if you have roadside coverage." },
+                { q: "What areas do you cover?", a: "Hemet, San Jacinto, Winchester, Menifee, Homeland, and all surrounding areas in the San Jacinto Valley." },
+              ].map((faq) => (
+                <details key={faq.q} className="bg-white rounded-xl border border-gray-100 group shadow-sm">
+                  <summary className="px-6 py-4 font-bold cursor-pointer list-none flex items-center justify-between text-sm">
+                    {faq.q}
+                    <svg className="w-4 h-4 text-gray-400 group-open:rotate-180 transition shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </summary>
+                  <p className="px-6 pb-4 text-gray-600 text-sm">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA */}
         <section className="py-20 bg-gradient-to-br from-emergency to-emergency-dark text-white text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">

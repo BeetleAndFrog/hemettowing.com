@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-gray-800 text-center py-6 text-xs">
-        &copy; {new Date().getFullYear()} Hemet Towing. All rights reserved. | Lead generation service — all services performed by licensed independent contractors.
+        &copy; {new Date().getFullYear()} Hemet Towing. All rights reserved. | Locally owned and operated. All services performed by licensed, bonded professionals.
       </div>
     </footer>
   );
