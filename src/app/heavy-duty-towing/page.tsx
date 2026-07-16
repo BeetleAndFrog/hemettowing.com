@@ -5,14 +5,25 @@ import QuoteForm from "@/components/QuoteForm";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { ServiceSchema, BreadcrumbListSchema } from "@/lib/schema";
+
 export const metadata: Metadata = {
   title: "Heavy Duty Towing Hemet — Truck & Equipment Towing",
   description: "Commercial and heavy duty towing in Hemet, CA. Class 3-8 trucks, construction equipment, and fleet vehicles. We handle the big jobs.",
+  alternates: { canonical: "https://hemettowing.com/heavy-duty-towing" },
 };
 
 export default function HeavyDutyPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={ServiceSchema({
+        name: "Heavy Duty Towing in Hemet, CA",
+        description: "Commercial and heavy duty towing in Hemet, CA. Class 3-8 trucks, construction equipment, fleet vehicles, RV and bus towing.",
+      })} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={BreadcrumbListSchema([
+        { name: "Home", href: "/" },
+        { name: "Heavy Duty Towing", href: "/heavy-duty-towing" },
+      ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
         <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>

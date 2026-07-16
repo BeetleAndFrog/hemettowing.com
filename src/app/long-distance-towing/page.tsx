@@ -5,14 +5,25 @@ import QuoteForm from "@/components/QuoteForm";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { ServiceSchema, BreadcrumbListSchema } from "@/lib/schema";
+
 export const metadata: Metadata = {
   title: "Long Distance Towing Hemet — Local & Cross-City Towing Service",
   description: "Need a tow across Hemet or to another city? We handle long distance towing with flatbed trucks. Safe, reliable transport for any vehicle.",
+  alternates: { canonical: "https://hemettowing.com/long-distance-towing" },
 };
 
 export default function LongDistancePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={ServiceSchema({
+        name: "Long Distance Towing in Hemet, CA",
+        description: "Long distance towing in Hemet, CA with flatbed trucks. Safe, reliable transport for any vehicle across town or across the state.",
+      })} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={BreadcrumbListSchema([
+        { name: "Home", href: "/" },
+        { name: "Long Distance Towing", href: "/long-distance-towing" },
+      ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
         <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>

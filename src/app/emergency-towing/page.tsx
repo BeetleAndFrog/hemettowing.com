@@ -5,14 +5,25 @@ import QuoteForm from "@/components/QuoteForm";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { ServiceSchema, BreadcrumbListSchema } from "@/lib/schema";
+
 export const metadata: Metadata = {
   title: "Emergency Towing Hemet — 24/7 Emergency Tow Truck Service",
   description: "Immediate emergency towing in Hemet, CA. Available 24/7 for accidents, breakdowns, and roadside emergencies. Fast response, local service.",
+  alternates: { canonical: "https://hemettowing.com/emergency-towing" },
 };
 
 export default function EmergencyTowingPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={ServiceSchema({
+        name: "Emergency Towing in Hemet, CA",
+        description: "24/7 emergency towing in Hemet, CA for accidents, breakdowns, and roadside emergencies. Fast response, local service.",
+      })} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={BreadcrumbListSchema([
+        { name: "Home", href: "/" },
+        { name: "Emergency Towing", href: "/emergency-towing" },
+      ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
         <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>

@@ -3,15 +3,21 @@ import Footer from "@/components/Footer";
 import Phone from "@/components/Phone";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About Us — Hemet Towing | Locally Owned & Operated",
   description: "Hemet Towing is a locally owned lead generation service connecting Hemet drivers with the area's most reliable towing professionals.",
+  alternates: { canonical: "https://hemettowing.com/about" },
 };
 
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={BreadcrumbListSchema([
+        { name: "Home", href: "/" },
+        { name: "About Us", href: "/about" },
+      ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
         <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>

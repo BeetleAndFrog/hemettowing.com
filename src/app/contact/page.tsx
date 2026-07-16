@@ -4,15 +4,21 @@ import Phone from "@/components/Phone";
 import QuoteForm from "@/components/QuoteForm";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Contact Us — Hemet Towing | 24/7 Dispatch",
   description: "Contact Hemet Towing for emergency towing or roadside assistance. Available 24/7. Call or fill out our form for a free quote.",
+  alternates: { canonical: "https://hemettowing.com/contact" },
 };
 
 export default function ContactPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={BreadcrumbListSchema([
+        { name: "Home", href: "/" },
+        { name: "Contact Us", href: "/contact" },
+      ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
         <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>

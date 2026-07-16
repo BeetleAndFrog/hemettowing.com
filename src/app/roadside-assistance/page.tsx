@@ -5,14 +5,25 @@ import QuoteForm from "@/components/QuoteForm";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { ServiceSchema, BreadcrumbListSchema } from "@/lib/schema";
+
 export const metadata: Metadata = {
   title: "Roadside Assistance Hemet — Flat Tire, Jump Start, Lockout & Fuel Delivery",
   description: "24/7 roadside assistance in Hemet, CA. Flat tire changes, jump starts, lockout service, and fuel delivery. Fast, friendly, affordable.",
+  alternates: { canonical: "https://hemettowing.com/roadside-assistance" },
 };
 
 export default function RoadsideAssistancePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={ServiceSchema({
+        name: "Roadside Assistance in Hemet, CA",
+        description: "24/7 roadside assistance in Hemet, CA including flat tire changes, jump starts, lockout service, and fuel delivery.",
+      })} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={BreadcrumbListSchema([
+        { name: "Home", href: "/" },
+        { name: "Roadside Assistance", href: "/roadside-assistance" },
+      ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
         <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>

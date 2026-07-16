@@ -4,10 +4,12 @@ import Phone from "@/components/Phone";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { cities } from "@/lib/cities";
+import { BreadcrumbListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Service Area — Hemet Towing | Cities We Serve",
   description: "We provide towing and roadside assistance throughout Hemet, San Jacinto, Menifee, Winchester, Homeland, and all surrounding areas.",
+  alternates: { canonical: "https://hemettowing.com/service-area" },
 };
 
 const extraAreas = ["East Hemet", "Valle Vista", "Sage", "Idyllwild (limited)", "Aguanga (limited)"];

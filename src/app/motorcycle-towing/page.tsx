@@ -5,14 +5,25 @@ import QuoteForm from "@/components/QuoteForm";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { ServiceSchema, BreadcrumbListSchema } from "@/lib/schema";
+
 export const metadata: Metadata = {
   title: "Motorcycle Towing Hemet — Safe Bike Transport in the IE",
   description: "Specialized motorcycle towing in Hemet, CA. Proper straps, soft ties, and wheel chocks — your bike gets the care it deserves.",
+  alternates: { canonical: "https://hemettowing.com/motorcycle-towing" },
 };
 
 export default function MotorcyclePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={ServiceSchema({
+        name: "Motorcycle Towing in Hemet, CA",
+        description: "Specialized motorcycle towing in Hemet, CA with proper straps, soft ties, and wheel chocks. Safe transport for sportbikes, cruisers, and dirt bikes.",
+      })} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={BreadcrumbListSchema([
+        { name: "Home", href: "/" },
+        { name: "Motorcycle Towing", href: "/motorcycle-towing" },
+      ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
         <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
