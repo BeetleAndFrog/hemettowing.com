@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { phone, formattedPhone } from "@/lib/constants";
+import { cities } from "@/lib/cities";
 
 export default function Footer() {
   return (
@@ -27,7 +29,7 @@ export default function Footer() {
             <br />
             24 hours / 7 days a week
             <br />
-            Serving Hemet, San Jacinto & surrounding areas
+            Serving <Link href="/cities/hemet" className="text-blue-400 hover:text-blue-300">Hemet</Link>, <Link href="/cities/san-jacinto" className="text-blue-400 hover:text-blue-300">San Jacinto</Link> & surrounding areas
           </p>
         </div>
       </div>

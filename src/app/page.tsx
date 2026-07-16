@@ -7,6 +7,12 @@ import TrustBadges from "@/components/TrustBadges";
 import { LocalBusinessSchema } from "@/lib/schema";
 import Link from "next/link";
 
+const citySlugs: Record<string, string> = {
+  "San Jacinto": "/cities/san-jacinto",
+  "Winchester": "/cities/winchester",
+  "Menifee": "/cities/menifee",
+  "Homeland": "/cities/homeland",
+};
 const services = [
   {
     title: "Emergency Towing",
@@ -183,11 +189,21 @@ export default function HomePage() {
               We cover Hemet and all surrounding areas — if you&apos;re here, we&apos;ll get to you.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              {["Hemet", "San Jacinto", "Winchester", "Menifee", "Homeland", "East Hemet", "Valle Vista", "Sage"].map((area) => (
-                <span key={area} className="bg-white px-4 py-2 rounded-full text-sm font-medium border border-gray-200 shadow-sm">
-                  {area}
-                </span>
-              ))}
+              {["Hemet", "San Jacinto", "Winchester", "Menifee", "Homeland", "East Hemet", "Valle Vista", "Sage"].map((area) => {
+                const slug = citySlugs[area];
+                if (slug) {
+                  return (
+                    <Link key={area} href={slug} className="bg-white px-4 py-2 rounded-full text-sm font-medium border border-gray-200 shadow-sm hover:border-emergency/30 hover:text-emergency transition">
+                      {area}
+                    </Link>
+                  );
+                }
+                return (
+                  <span key={area} className="bg-white px-4 py-2 rounded-full text-sm font-medium border border-gray-200 shadow-sm">
+                    {area}
+                  </span>
+                );
+              })}
             </div>
           </div>
         </section>
