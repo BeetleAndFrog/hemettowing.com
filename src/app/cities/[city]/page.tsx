@@ -64,6 +64,21 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           <Phone variant="hero" />
         </div>
 
+        {/* Neighborhoods */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-2">Towing in {c.name} Neighborhoods</h2>
+          <p className="text-gray-500 text-sm mb-6">We know these roads. Here&apos;s what to expect in each area.</p>
+          <div className="grid md:grid-cols-2 gap-4">
+            {c.neighborhoods.map((n) => (
+              <div key={n.name} className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                <h3 className="font-bold text-gray-900 mb-1">{n.name}</h3>
+                <p className="text-xs text-gray-400 mb-2">Major roads: {n.roads}</p>
+                <p className="text-sm text-gray-600">{n.towing_note}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Services grid */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-6">Our {c.name} Towing Services</h2>
