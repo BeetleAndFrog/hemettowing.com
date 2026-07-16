@@ -17,11 +17,11 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold mb-3">Services</h3>
           <ul className="space-y-2 text-sm">
-            <li>Emergency Towing</li>
-            <li>Roadside Assistance</li>
-            <li>Long Distance Towing</li>
-            <li>Motorcycle Towing</li>
-            <li>Heavy Duty Towing</li>
+            <li><Link href="/emergency-towing" className="text-gray-400 hover:text-white transition">Emergency Towing</Link></li>
+            <li><Link href="/roadside-assistance" className="text-gray-400 hover:text-white transition">Roadside Assistance</Link></li>
+            <li><Link href="/long-distance-towing" className="text-gray-400 hover:text-white transition">Long Distance Towing</Link></li>
+            <li><Link href="/motorcycle-towing" className="text-gray-400 hover:text-white transition">Motorcycle Towing</Link></li>
+            <li><Link href="/heavy-duty-towing" className="text-gray-400 hover:text-white transition">Heavy Duty Towing</Link></li>
           </ul>
         </div>
         <div>
