@@ -5,7 +5,12 @@ import Phone from "@/components/Phone";
 import QuoteForm from "@/components/QuoteForm";
 import TrustBadges from "@/components/TrustBadges";
 import { LocalBusinessSchema } from "@/lib/schema";
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "https://hemettowing.com" },
+};
 
 const citySlugs: Record<string, string> = {
   "San Jacinto": "/cities/san-jacinto",

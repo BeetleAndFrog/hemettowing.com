@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { cities, findCity, cityLabel, services } from "@/lib/cities";
 import { phone } from "@/lib/constants";
+import { ServiceSchema, BreadcrumbListSchema } from "@/lib/schema";
 
 export async function generateStaticParams() {
   const params: { city: string; service: string }[] = [];
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   return {
     title: `${titleBase} in ${c.name}, CA — 24/7 ${s.name}`,
     description: `Need ${s.name.toLowerCase()} in ${c.name}? We provide 24/7 ${s.name.toLowerCase()} throughout ${c.name} and the San Jacinto Valley. Fast response, local service. Call ${phone}.`,
+    alternates: { canonical: `https://hemettowing.com/cities/${city}/${service}` },
   };
 }
 
@@ -91,6 +93,16 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={ServiceSchema({
+        name: `${s.name} in ${c.name}, CA`,
+        description: `24/7 ${s.name.toLowerCase()} in ${c.name}, CA. ${detail?.hook ?? ""}`,
+        areaServedCity: c.name,
+      })} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={BreadcrumbListSchema([
+        { name: "Home", href: "/" },
+        { name: `${c.name}, CA`, href: `/cities/${city}` },
+        { name: s.name, href: `/cities/${city}/${service}` },
+      ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
         <Link href={`/cities/${city}`} className="text-trust text-sm mb-4 inline-block hover:underline">

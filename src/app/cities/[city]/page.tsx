@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { cities, findCity, cityLabel, services } from "@/lib/cities";
 import { phone } from "@/lib/constants";
+import { BreadcrumbListSchema } from "@/lib/schema";
 
 export async function generateStaticParams() {
   return cities.map((c) => ({ city: c.slug }));
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   return {
     title: `Towing in ${c.name}, CA — 24/7 Local Tow Truck Service`,
     description: `Need towing in ${c.name}, CA? We provide 24/7 emergency towing, roadside assistance, and recovery services throughout ${c.name} and the San Jacinto Valley. Call ${phone}.`,
+    alternates: { canonical: `https://hemettowing.com/cities/${city}` },
   };
 }
 
@@ -41,6 +43,10 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={BreadcrumbListSchema([
+        { name: "Home", href: "/" },
+        { name: `${c.name}, CA`, href: `/cities/${city}` },
+      ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
         <Link href="/service-area" className="text-trust text-sm mb-4 inline-block hover:underline">

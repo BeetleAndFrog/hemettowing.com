@@ -30,7 +30,14 @@ export default function AboutPage() {
             on who shows up when you&apos;re stranded.
           </p>
           <p className="leading-relaxed mt-4">
-            Every towing partner we work with is licensed, insured, and committed to fair pricing.
+            Every towing partner we work with is licensed, insured, and committed to fair pricing. We don&apos;t take kickbacks for sending
+            business one way or another — we recommend operators based on who&apos;s closest, best equipped, and most responsive for your
+            specific situation.
+          </p>
+          <p className="leading-relaxed mt-4">
+            We know Hemet — the heat, the roads, the traffic patterns on Florida and Domenigoni, and the challenges that come with living
+            in a valley community between mountain ranges. Whether you&apos;re a long-time resident or new to the area, we want you to know
+            there&apos;s a dependable towing resource here when you need it.
           </p>
         </div>
 

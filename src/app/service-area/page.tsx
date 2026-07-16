@@ -21,28 +21,72 @@ export default function ServiceAreaPage() {
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Service Area</h1>
         <p className="text-gray-600 text-lg mb-8">We provide towing and roadside assistance across the entire San Jacinto Valley and surrounding areas. If you&apos;re stuck within our coverage zone, we&apos;re on the way.</p>
 
-        <h2 className="text-xl font-bold mb-4">Major Service Areas</h2>
-        <div className="grid sm:grid-cols-2 gap-4 mb-8">
-          {cities.map((area) => (
-            <Link
-              key={area.slug}
-              href={`/cities/${area.slug}`}
-              className="bg-gray-50 px-5 py-4 rounded-lg border border-gray-100 hover:border-emergency/30 hover:bg-white transition group"
-            >
-              <span className="font-medium group-hover:text-emergency transition">{area.name}</span>
-              <span className="text-xs text-gray-400 ml-2">View services &rarr;</span>
-            </Link>
-          ))}
-        </div>
+        <section className="mb-12">
+          <h2 className="text-xl font-bold mb-4">Major Service Areas</h2>
+          <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            {cities.map((area) => (
+              <Link
+                key={area.slug}
+                href={`/cities/${area.slug}`}
+                className="bg-gray-50 px-5 py-4 rounded-lg border border-gray-100 hover:border-emergency/30 hover:bg-white transition group"
+              >
+                <span className="font-medium group-hover:text-emergency transition">{area.name}</span>
+                <span className="text-xs text-gray-400 ml-2">View services &rarr;</span>
+              </Link>
+            ))}
+          </div>
 
-        <h2 className="text-xl font-bold mb-4">Also Serving</h2>
-        <div className="grid sm:grid-cols-2 gap-4 mb-12">
-          {extraAreas.map((area) => (
-            <div key={area} className="bg-gray-50 px-5 py-4 rounded-lg border border-gray-100">
-              <span className="font-medium">{area}</span>
+          <h2 className="text-xl font-bold mb-4">Also Serving</h2>
+          <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            {extraAreas.map((area) => (
+              <div key={area} className="bg-gray-50 px-5 py-4 rounded-lg border border-gray-100">
+                <span className="font-medium">{area}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12 bg-gray-50 p-6 rounded-xl">
+          <h2 className="text-2xl font-bold mb-4">Your Location, Our Coverage</h2>
+          <p className="text-gray-600 mb-4">
+            Because Hemet sits between the San Jacinto Mountains and the valley floor, our coverage area has some
+            unique quirks. Main roads like Florida Avenue, Domenigoni Parkway, State Street, and the 79 corridor
+            are always our fastest response zones — we can reach most breakdowns there within 20 minutes.
+          </p>
+          <p className="text-gray-600 mb-4">
+            For mountain-adjacent areas like Sage, Valle Vista, and the 74 corridor, response times may stretch to
+            30–40 minutes depending on road conditions, especially during monsoon season when flash flooding can
+            close sections of Warren Road and Grand Avenue. Our drivers know the alternate routes and won&apos;t
+            leave you waiting blind.
+          </p>
+          <p className="text-gray-600">
+            For Idyllwild and Aguanga, our coverage is limited — the mountain roads and remote terrain require
+            specific equipment and extra travel time. Always call first and we&apos;ll let you know if we can
+            reach you and how fast.
+          </p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">How fast can you reach me on Domenigoni Parkway?</h3>
+              <p className="text-gray-600">Domenigoni is one of our fastest response corridors — typically 15–25 minutes depending on traffic. It&apos;s a major route and we stage trucks to cover it.</p>
             </div>
-          ))}
-        </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">Do you cover the 74 going up the mountain?</h3>
+              <p className="text-gray-600">Yes, we serve the 74 corridor from Hemet up toward Mountain Center, but response times vary based on how far up the grade you are. Call and we&apos;ll give you an accurate ETA.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">What about Menifee and Winchester?</h3>
+              <p className="text-gray-600">Covered. Menifee and Winchester are part of our standard service area along the Domenigoni corridor. We handle calls there daily.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">Can you reach me if I&apos;m on a side street or rural road?</h3>
+              <p className="text-gray-600">Yes. We know Hemet&apos;s side streets and rural routes. Just give us a land reference — cross streets, landmarks, or even GPS coordinates — and we&apos;ll find you.</p>
+            </div>
+          </div>
+        </section>
 
         <div className="bg-gray-50 p-8 rounded-xl text-center">
           <h2 className="text-2xl font-bold mb-3">Not Sure If We Cover Your Location?</h2>

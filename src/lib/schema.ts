@@ -1,4 +1,4 @@
-import { phone } from "./constants";
+import { phone, serviceArea } from "./constants";
 
 export function LocalBusinessSchema() {
   return {
@@ -23,6 +23,52 @@ export function LocalBusinessSchema() {
         closes: "23:59",
       },
       priceRange: "$$",
+    }),
+  };
+}
+
+export function ServiceSchema({
+  name,
+  description,
+  areaServedCity,
+}: {
+  name: string;
+  description: string;
+  areaServedCity?: string;
+}) {
+  const areas = areaServedCity
+    ? [{ "@type": "City" as const, name: areaServedCity }]
+    : serviceArea.map((c) => ({ "@type": "City" as const, name: c }));
+
+  return {
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name,
+      description,
+      provider: {
+        "@type": "TowingService",
+        name: "Hemet Towing",
+        telephone: phone,
+        url: "https://hemettowing.com",
+      },
+      areaServed: areas,
+      telephone: phone,
+    }),
+  };
+}
+
+export function BreadcrumbListSchema(items: { name: string; href: string }[]) {
+  return {
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: items.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.name,
+        item: `https://hemettowing.com${item.href}`,
+      })),
     }),
   };
 }
