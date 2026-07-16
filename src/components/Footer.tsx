@@ -4,11 +4,13 @@ import { cities } from "@/lib/cities";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-400 mt-20">
+    <footer className="bg-dark text-gray-400 mt-20">
       <div className="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
         <div>
-          <h3 className="text-white font-semibold mb-3">Hemet Towing</h3>
-          <p className="text-sm leading-relaxed">
+          <Link href="/" className="inline-block mb-4">
+            <img src="/logo.png" alt="Hemet Towing" className="h-12 w-auto" />
+          </Link>
+          <p className="text-sm leading-relaxed text-gray-400">
             Hemet&apos;s trusted 24/7 towing and roadside assistance service. Fast, professional, and locally owned.
           </p>
         </div>

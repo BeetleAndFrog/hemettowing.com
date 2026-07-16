@@ -16,16 +16,16 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+    <header className="bg-dark sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2" onClick={() => setMenuOpen(false)}>
           <img src="/logo.png" alt="Hemet Towing" className="h-10 md:h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-trust transition">{link.label}</Link>
+            <Link key={link.href} href={link.href} className="hover:text-white transition">{link.label}</Link>
           ))}
         </nav>
 
@@ -33,7 +33,7 @@ export default function Header() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition"
+            className="md:hidden p-2 rounded-lg text-gray-300 hover:bg-white/10 transition"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
           >
@@ -61,14 +61,14 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <nav className="md:hidden border-t border-gray-100 bg-white" role="navigation" aria-label="Mobile navigation">
+        <nav className="md:hidden border-t border-white/10 bg-dark" role="navigation" aria-label="Mobile navigation">
           <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-emergency rounded-lg transition"
+                className="px-4 py-3 text-sm font-medium text-gray-300 hover:bg-white/10 hover:text-white rounded-lg transition"
               >
                 {link.label}
               </Link>
