@@ -10,6 +10,10 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+  },
   openGraph: {
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
