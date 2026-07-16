@@ -1,5 +1,5 @@
-export const phone = "(951) 123-4567";
-export const formattedPhone = "(951) 456-7890";
+export const phone = "(951) 777-9776";
+export const formattedPhone = "(951) 777-9776";
 export const email = "dispatch@hemettowing.com";
 export const city = "Hemet";
 export const state = "CA";

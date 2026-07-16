@@ -1,3 +1,5 @@
+import { phone } from "./constants";
+
 export function LocalBusinessSchema() {
   return {
     __html: JSON.stringify({
@@ -6,7 +8,7 @@ export function LocalBusinessSchema() {
       name: "Hemet Towing",
       description: "24/7 emergency towing and roadside assistance serving Hemet, CA and surrounding areas.",
       url: "https://hemettowing.com",
-      telephone: "(951) 456-7890",
+      telephone: phone,
       areaServed: [
         { "@type": "City", name: "Hemet" },
         { "@type": "City", name: "San Jacinto" },
