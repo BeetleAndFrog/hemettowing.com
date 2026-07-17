@@ -85,10 +85,11 @@ export default function HomePage() {
       <Header />
       <main id="main-content">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-trust-dark text-white py-20 md:py-28 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-10 left-10 w-64 h-64 bg-emergency rounded-full blur-3xl" />
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
+        <section className="relative text-white py-20 md:py-28 overflow-hidden">
+          {/* Background image */}
+          <div className="absolute inset-0">
+            <img src="/images/hero-tow-truck.png" alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/85 to-gray-900/70" />
           </div>
           <div className="max-w-6xl mx-auto px-4 text-center relative">
             <div className="inline-flex items-center gap-2 bg-emergency/20 text-emergency-light text-sm font-bold px-4 py-1.5 rounded-full mb-6 border border-emergency/30">
