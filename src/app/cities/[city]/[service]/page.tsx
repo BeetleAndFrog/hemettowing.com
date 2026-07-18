@@ -117,7 +117,17 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
 
         {cityCopy ? (
           <>
-            <p className="text-gray-600 text-lg mb-8">{cityCopy.hook}</p>
+            <p className="text-gray-600 text-lg mb-6">{cityCopy.hook}</p>
+
+            {/* Inline phone CTA after hook — visible above the fold on mobile */}
+            <div className="mb-8 md:hidden">
+              <a href="tel:(951) 777-9776"
+                className="w-full bg-emergency hover:bg-emergency-dark text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-3 shadow-lg shadow-emergency/25 pulse-emergency text-lg"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                Call Now
+              </a>
+            </div>
 
             {/* The [City] Difference — moved above the fold */}
             <section className="mb-8 bg-emergency-light border border-emergency/10 rounded-xl p-6">
@@ -127,6 +137,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="space-y-4 text-gray-600">
+                <h2 className="text-xl font-bold text-gray-900">How It Works in {c.name}</h2>
                 {cityCopy.content.map((para, i) => (
                   <p key={i}>{para}</p>
                 ))}
