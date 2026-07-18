@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     locale: "en_US",
     type: "website",
+    images: [{ url: "/images/hemet-towing-branded-hero.png", width: 1200, height: 630 }],
   },
 };
 

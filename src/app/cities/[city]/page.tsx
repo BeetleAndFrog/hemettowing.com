@@ -48,10 +48,14 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const { city } = await params;
   const c = findCity(city);
   if (!c) return { title: "City Not Found" };
+  const hero = cityHeroes.find(h => h.filename === `${city}.png`);
   return {
     title: `Towing in ${c.name}, CA — 24/7 Local Tow Truck Service`,
     description: `Need towing in ${c.name}, CA? We provide 24/7 emergency towing, roadside assistance, and recovery services throughout ${c.name} and the San Jacinto Valley. Call ${phone}.`,
     alternates: { canonical: `https://hemettowing.com/cities/${city}` },
+    openGraph: {
+      images: hero ? [{ url: `/images/${hero.filename}`, width: 1200, height: 630 }] : undefined,
+    },
   };
 }
 

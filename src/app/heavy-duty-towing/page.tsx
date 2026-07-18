@@ -49,6 +49,19 @@ export default function HeavyDutyPage() {
           <li className="flex gap-2"><span className="text-emergency font-bold">•</span> RV and bus towing</li>
         </ul>
 
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div>
+            <h2 className="text-xl font-semibold mb-3">Heavy Duty Services</h2>
+            <p className="text-gray-600">
+              Heavy duty breakdowns need heavy duty equipment. We partner with operators who have the rigs and experience to handle commercial vehicles, fleet trucks, and construction equipment.
+            </p>
+          </div>
+          <div className="bg-gray-50 p-6 rounded-xl">
+            <h3 className="font-semibold mb-3">Request a Quote</h3>
+            <QuoteForm />
+          </div>
+        </div>
+
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Commercial Towing in Hemet & the San Jacinto Valley</h2>
           <p className="text-gray-600 mb-4">

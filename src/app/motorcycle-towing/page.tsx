@@ -49,6 +49,19 @@ export default function MotorcyclePage() {
           <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Local and long-distance available</li>
         </ul>
 
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div>
+            <h2 className="text-xl font-semibold mb-3">Motorcycle Towing Services</h2>
+            <p className="text-gray-600">
+              Your bike is more than a vehicle — it's an investment. Our specialized motorcycle towing ensures safe transport every time.
+            </p>
+          </div>
+          <div className="bg-gray-50 p-6 rounded-xl">
+            <h3 className="font-semibold mb-3">Request a Quote</h3>
+            <QuoteForm />
+          </div>
+        </div>
+
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Why Motorcycle Towing Is Different</h2>
           <p className="text-gray-600 mb-4">

@@ -49,6 +49,19 @@ export default function LongDistancePage() {
           <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Classic car and specialty vehicle transport</li>
         </ul>
 
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div>
+            <h2 className="text-xl font-semibold mb-3">Long Distance Towing Services</h2>
+            <p className="text-gray-600">
+              Need your vehicle moved from Hemet to another city — or just across town? Our flatbed trucks handle it all, with safe and reliable transport for any distance.
+            </p>
+          </div>
+          <div className="bg-gray-50 p-6 rounded-xl">
+            <h3 className="font-semibold mb-3">Request a Quote</h3>
+            <QuoteForm />
+          </div>
+        </div>
+
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Where Can We Tow From Hemet?</h2>
           <p className="text-gray-600 mb-4">

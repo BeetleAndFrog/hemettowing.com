@@ -26,10 +26,14 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const s = services.find((x) => x.slug === service);
   if (!c || !s) return { title: "Not Found" };
   const titleBase = s.slug === "roadside-assistance" ? "Roadside Assistance" : s.name;
+  const hero = cityHeroes.find(h => h.filename === `${city}.png`);
   return {
     title: `${titleBase} in ${c.name}, CA — 24/7 ${s.name}`,
     description: `Need ${s.name.toLowerCase()} in ${c.name}? We provide 24/7 ${s.name.toLowerCase()} throughout ${c.name} and the San Jacinto Valley. Fast response, local service. Call ${phone}.`,
     alternates: { canonical: `https://hemettowing.com/cities/${city}/${service}` },
+    openGraph: {
+      images: hero ? [{ url: `/images/${hero.filename}`, width: 1200, height: 630 }] : undefined,
+    },
   };
 }
 
