@@ -22,7 +22,7 @@ export default function AboutPage() {
       <main id="main-content">
         <section className="relative text-white py-16 md:py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <img src="/images/about-driver-peterbilt.png" alt="" className="w-full h-full object-cover" />
+            <img src="/images/hemet-towing-branded-hero.png" alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/85 to-gray-900/70" />
           </div>
           <div className="max-w-6xl mx-auto px-4 relative">
