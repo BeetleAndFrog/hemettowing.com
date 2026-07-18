@@ -6,7 +6,7 @@ import { phone } from "@/lib/constants";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/emergency-towing", label: "Services" },
+  { href: "/services", label: "Services" },
   { href: "/service-area", label: "Service Area" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
