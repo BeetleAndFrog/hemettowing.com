@@ -112,16 +112,17 @@ export default function ServicesPage() {
           {/* Service cards */}
           <section className="mb-16 space-y-10">
             {serviceList.map((svc, idx) => (
-              <div
+              <Link
                 key={svc.slug}
+                href={`/${svc.slug}`}
                 id={svc.slug}
-                className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden scroll-mt-24"
+                className="block bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden scroll-mt-24 hover:border-emergency/30 hover:shadow-md transition group"
               >
                 <div className="p-6 md:p-8">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="iconbox mt-0.5">{icons[svc.icon]}</div>
                     <div>
-                      <h2 className="text-2xl font-bold">{svc.title}</h2>
+                      <h2 className="text-2xl font-bold group-hover:text-emergency transition">{svc.title}</h2>
                       <p className="text-emergency font-medium text-sm mt-1">{svc.tagline}</p>
                     </div>
                   </div>
@@ -134,14 +135,11 @@ export default function ServicesPage() {
                       </div>
                     ))}
                   </div>
-                  <Link
-                    href={`/${svc.slug}`}
-                    className="inline-flex items-center gap-2 text-emergency font-semibold hover:text-emergency-dark transition text-sm"
-                  >
+                  <span className="inline-flex items-center gap-2 text-emergency font-semibold group-hover:text-emergency-dark transition text-sm">
                     Learn more about {svc.title.toLowerCase()} &rarr;
-                  </Link>
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </section>
 
