@@ -13,7 +13,6 @@ export async function generateStaticParams() {
   const params: { city: string; service: string }[] = [];
   for (const c of cities) {
     for (const s of services) {
-      // Emergency towing has dedicated pages below — enabled with city-specific copy
       params.push({ city: c.slug, service: s.slug });
     }
   }
@@ -108,7 +107,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
       ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href={`/cities/${city}`} className="text-trust text-sm mb-4 inline-block hover:underline">
+        <Link href={`/cities/${city}`} className="text-emergency text-sm mb-4 inline-block hover:underline">
           &larr; {s.name} in {c.name}
         </Link>
 
@@ -119,6 +118,12 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         {cityCopy ? (
           <>
             <p className="text-gray-600 text-lg mb-8">{cityCopy.hook}</p>
+
+            {/* The [City] Difference — moved above the fold */}
+            <section className="mb-8 bg-emergency-light border border-emergency/10 rounded-xl p-6">
+              <h2 className="text-xl font-bold mb-2">The {c.name} Difference</h2>
+              <p className="text-gray-700">{cityCopy.localAngle}</p>
+            </section>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="space-y-4 text-gray-600">
@@ -132,11 +137,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
               </div>
             </div>
 
-            <section className="mb-12 bg-blue-50 p-6 rounded-xl">
-              <h2 className="text-xl font-bold mb-2">The {c.name} Difference</h2>
-              <p className="text-gray-600">{cityCopy.localAngle}</p>
-            </section>
-
+            {/* City + Service specific FAQs */}
             {cityCopy.faqs.length > 0 && (
               <section className="mb-12">
                 <h2 className="text-xl font-bold mb-4">
@@ -162,7 +163,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
                 <ul className="space-y-3 text-gray-600">
                   {(detail?.details ?? []).map((item, i) => (
                     <li key={i} className="flex gap-2">
-                      <span className="text-trust font-bold">•</span> {item}
+                      <span className="text-emergency font-bold">•</span> {item}
                     </li>
                   ))}
                 </ul>

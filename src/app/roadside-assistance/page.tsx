@@ -26,19 +26,19 @@ export default function RoadsideAssistancePage() {
       ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">Roadside Assistance in Hemet</h1>
-        <p className="text-gray-600 text-lg mb-8">Whether you locked your keys in the car or need a jump start in the heat, we provide fast roadside assistance anywhere in the Hemet area.</p>
+        <Link href="/" className="text-emergency text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">Roadside Assistance in Hemet, CA</h1>
+        <p className="text-gray-600 text-lg mb-8">Breakdowns happen when you least expect them — a flat tire on your way to work, a dead battery in the grocery store parking lot, or a lockout after a long day. We handle all of it, fast.</p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div>
-            <h2 className="text-xl font-semibold mb-3">Services We Offer</h2>
+            <h2 className="text-xl font-semibold mb-3">What We Offer</h2>
             <ul className="space-y-3 text-gray-600">
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Flat tire change (spare or repair)</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Jump start / battery boost</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Lockout service — we get you back in your car</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Fuel delivery when you run out of gas</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Winch-out / extraction</li>
+              <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Flat tire change (spare or repair)</li>
+              <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Jump start / battery boost</li>
+              <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Lockout service — we get you back in your car</li>
+              <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Fuel delivery when you run out of gas</li>
+              <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Winch-out / extraction</li>
             </ul>
           </div>
           <div className="bg-gray-50 p-6 rounded-xl">

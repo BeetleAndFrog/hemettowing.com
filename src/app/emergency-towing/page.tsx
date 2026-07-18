@@ -26,7 +26,7 @@ export default function EmergencyTowingPage() {
       ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
+        <Link href="/" className="text-emergency text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Emergency Towing in Hemet, CA</h1>
         <p className="text-gray-600 text-lg mb-8">When your car breaks down in the middle of nowhere — or worse, in the middle of traffic — you need help immediately. That&apos;s exactly what we&apos;re here for.</p>
 
@@ -34,11 +34,11 @@ export default function EmergencyTowingPage() {
           <div>
             <h2 className="text-xl font-semibold mb-3">We Respond to All Emergencies</h2>
             <ul className="space-y-3 text-gray-600">
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Accident recovery and scene clearance</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Vehicle breakdowns on highways and local roads</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Mechanical failure towing</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Off-road recovery</li>
-              <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Rollback and flatbed towing for damaged vehicles</li>
+              <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Accident recovery and scene clearance</li>
+              <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Vehicle breakdowns on highways and local roads</li>
+              <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Mechanical failure towing</li>
+              <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Off-road recovery</li>
+              <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Rollback and flatbed towing for damaged vehicles</li>
             </ul>
           </div>
           <div className="bg-gray-50 p-6 rounded-xl">
@@ -85,7 +85,7 @@ export default function EmergencyTowingPage() {
           </p>
         </section>
 
-        <section className="mb-12 bg-blue-50 p-6 rounded-xl">
+        <section className="mb-12 bg-emergency-light border border-emergency/10 rounded-xl p-6">
           <h2 className="text-2xl font-bold mb-4">For Our Senior Drivers</h2>
           <p className="text-gray-600 mb-4">
             Nearly one in four Hemet residents is 65 or older, and we know that getting stranded is more stressful

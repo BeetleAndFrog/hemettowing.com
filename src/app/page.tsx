@@ -151,7 +151,7 @@ export default function HomePage() {
                   href={s.href}
                   className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-emergency/30 hover:-translate-y-0.5 transition-all group"
                 >
-                  <div className="text-trust mb-3 group-hover:text-emergency transition-colors">{icons[s.icon]}</div>
+                  <div className="iconbox mb-3">{icons[s.icon]}</div>
                   <h3 className="font-bold text-lg mb-1.5 group-hover:text-emergency transition-colors">{s.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
                 </Link>

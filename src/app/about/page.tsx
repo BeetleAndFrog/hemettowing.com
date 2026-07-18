@@ -20,7 +20,7 @@ export default function AboutPage() {
       ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
+        <Link href="/" className="text-emergency text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
         <h1 className="text-3xl md:text-4xl font-bold mb-6">About Hemet Towing</h1>
 
         <div className="prose prose-gray max-w-none">

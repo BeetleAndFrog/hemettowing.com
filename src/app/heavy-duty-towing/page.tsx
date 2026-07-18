@@ -26,14 +26,14 @@ export default function HeavyDutyPage() {
       ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
+        <Link href="/" className="text-emergency text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Heavy Duty Towing in Hemet</h1>
         <p className="text-gray-600 text-lg mb-8">Heavy duty breakdowns need heavy duty equipment. We partner with operators who have the rigs and experience to handle commercial vehicles, fleet trucks, and construction equipment.</p>
         <ul className="space-y-3 text-gray-600 mb-8">
-          <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Class 3-8 truck towing</li>
-          <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Construction equipment transport</li>
-          <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Fleet vehicle recovery</li>
-          <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> RV and bus towing</li>
+          <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Class 3-8 truck towing</li>
+          <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Construction equipment transport</li>
+          <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Fleet vehicle recovery</li>
+          <li className="flex gap-2"><span className="text-emergency font-bold">•</span> RV and bus towing</li>
         </ul>
 
         <section className="mb-12">

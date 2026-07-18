@@ -26,14 +26,14 @@ export default function MotorcyclePage() {
       ])} />
       <Header />
       <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href="/" className="text-blue-600 text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">Motorcycle Towing in Hemet</h1>
-        <p className="text-gray-600 text-lg mb-8">Your bike is more than a vehicle — it&apos;s an investment. Our specialized motorcycle towing ensures safe transport every time, with the right gear and the right technique.</p>
+        <Link href="/" className="text-emergency text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
+        <h1 className="text-3xl font-bold mb-4">Motorcycle Towing in Hemet, CA</h1>
+        <p className="text-gray-600 text-lg mb-8">Your bike is more than a vehicle — it's an investment. Our specialized motorcycle towing ensures safe transport every time.</p>
         <ul className="space-y-3 text-gray-600 mb-8">
-          <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Soft tie-down straps — no damage to handlebars or paint</li>
-          <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Wheel chocks for secure positioning</li>
-          <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Sportbike, cruiser, touring, and dirt bike capable</li>
-          <li className="flex gap-2"><span className="text-blue-600 font-bold">•</span> Local and long-distance available</li>
+          <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Soft tie-down straps — no damage to handlebars or paint</li>
+          <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Wheel chocks for secure positioning</li>
+          <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Sportbike, cruiser, touring, and dirt bike capable</li>
+          <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Local and long-distance available</li>
         </ul>
 
         <section className="mb-12">

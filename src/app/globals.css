@@ -11,9 +11,20 @@
   --color-emergency: #dc2626;
   --color-emergency-dark: #b91c1c;
   --color-emergency-light: #fef2f2;
-  --color-trust: #1e40af;
-  --color-trust-dark: #1e3a8a;
   --color-dark: #181818;
+}
+
+/* Icon box for service cards — red translucent background, dark red icon */
+.iconbox {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(220, 38, 38, 0.15);
+  color: #991b1b;
+  flex-shrink: 0;
 }
 
 /* Emergency badge pulse animation */
