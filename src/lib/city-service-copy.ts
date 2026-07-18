@@ -4,307 +4,375 @@ export type CityServiceKey = `${string}:${string}`;
 
 export interface CityServiceCopy {
   hook: string;
-  commonScenarios: string[];
+  content: string[];
   localAngle: string;
-  neighborhoods: string[];
-  roads: string[];
-  faqs?: { q: string; a: string }[];
-  landmarks?: string[];
+  faqs: { q: string; a: string }[];
 }
 
 export const cityServiceCopy: Record<string, CityServiceCopy> = {
   // ─── HEMET ───────────────────────────────────────────────
 
+  "hemet:emergency-towing": {
+    hook: "When a car accident blocks Florida Avenue or a breakdown on the 79 leaves you stranded in 110°F heat, you don't need a tow truck tomorrow — you need one now. Hemet's extreme conditions turn ordinary breakdowns into emergencies fast, and we treat every call with that urgency.",
+    content: [
+      "Hemet's busiest accident corridors — Florida Avenue, Domenigoni Parkway, and the 79 — see everything from fender benders at the mall intersection to serious wrecks on the highway stretches. Florida Avenue through downtown Hemet is particularly bad during peak hours, where stop-and-go traffic leads to rear-enders and intersection collisions that can block lanes for blocks. We know which crossings are the most dangerous and we stage our drivers accordingly, so when a call comes in from a specific intersection, we already know how to approach it and where to position the truck without adding to the traffic jam.",
+      "Summer breakdowns in Hemet are a different kind of emergency. When the temperature hits 110°F and your car dies on Warren Road or Stetson Avenue, you're not just stranded — you're in a dangerous situation. The inside of a disabled car can reach 140°F in under twenty minutes, and for Hemet's large senior population — nearly one in four residents is over 65 — that heat is life-threatening. We flag every summer breakdown call as a priority response, especially for elderly drivers, because waiting for a tow truck in those conditions isn't just inconvenient, it's genuinely unsafe.",
+      "Late-night accidents on Hemet's unlit roads present their own set of challenges. Warren Road, the 79 corridor, and stretches of Domenigoni Parkway have no street lighting, making it nearly impossible for oncoming traffic to see a disabled vehicle until they're right on top of it. Secondary accidents — where a car hits a broken-down vehicle — are a real risk here. That's why we clear these scenes as fast as possible, coordinating with Hemet PD and CHP to get traffic controlled and the vehicle recovered before a second crash happens.",
+    ],
+    localAngle: "Hemet's combination of extreme summer heat, a large senior population, and road infrastructure that wasn't built for its current traffic volume creates an emergency towing environment unlike any other city in the valley. A breakdown here isn't just a mechanical problem — it's a race against the heat, the traffic, and the clock, and we treat every call with that understanding.",
+    faqs: [
+      { q: "How fast can you get to an accident on Florida Avenue?", a: "We aim for 15 to 20 minutes for accident calls on Florida Avenue and other major Hemet corridors. For emergencies involving injuries, we coordinate with Hemet PD and fire to clear a path for first responders and recover vehicles once the scene is secure." },
+      { q: "What should I do if my car breaks down on the 79 in summer heat?", a: "Turn on your hazards, call us immediately, and if it's safe to do so, get everyone out of the car and into shade or an air-conditioned vehicle. If you're a senior driver or have children or pets with you, tell our dispatcher — we flag those calls for priority response." },
+      { q: "Do you handle accident scenes with multiple vehicles?", a: "Yes. We have multiple trucks available for multi-vehicle collisions, which aren't uncommon on Domenigoni Parkway and the 79. We work directly with law enforcement to coordinate the recovery in whatever order they need." },
+    ],
+  },
+
   "hemet:roadside-assistance": {
     hook: "Hemet summers push cars to their limit. When it hits 110°F — and it does, every July through September — batteries die, tires blow, and cooling systems give out. We pull over a hundred Hemet drivers out of these situations every summer.",
-    commonScenarios: [
-      "Dead batteries on Florida Avenue after sitting in stop-and-go traffic at 105°F",
-      "Senior lockouts in West Hemet and Valle Vista — older drivers accidentally lock keys in running cars",
-      "Flat tires on Domenigoni Parkway from summer heat expansion and road debris",
-      "Empty gas tanks on the 79 corridor — drivers misjudge the distance between stations",
+    content: [
+      "The most common roadside call we get in Hemet is a dead battery on Florida Avenue during the afternoon heat. The combination of stop-and-go traffic, running the air conditioner on full blast, and an older battery that's been weakened by months of triple-digit under-hood temperatures is a recipe for failure. We carry more battery boosters than any other tool for a reason — in Hemet, battery calls outnumber everything else combined by mid-July.",
+      "Flat tires are the second most frequent call, and they cluster around specific areas. Domenigoni Parkway sees the most tire damage from road debris — construction trucks drop screws and nails, and the heat expansion causes older tires to blow. We also get a steady stream of lockout calls from West Hemet and Valle Vista, where seniors living alone accidentally lock their keys in the car while running errands. These calls are quick to resolve but stressful for the driver, and we treat them with patience and care.",
+      "Empty gas tank calls on the 79 corridor are more common here than anywhere else in the valley. Drivers misjudge the distance between gas stations on the rural stretches, especially visitors who aren't familiar with the area. We carry enough fuel to get you to the nearest station, and we know exactly which stations are actually open — not all of them are, especially late at night.",
     ],
-    localAngle: "Hemet has 22.8% seniors — one of the highest concentrations in Riverside County. Seniors need more roadside assistance per capita: lockouts, dead batteries from short trips, and flat tires from aging tires they haven't replaced.",
-    neighborhoods: ["East Hemet", "West Hemet / Valle Vista", "Diamond Valley Lake area", "Downtown Hemet"],
-    roads: ["Florida Ave", "Domenigoni Parkway", "Warren Rd", "Stetson Ave"],
+    localAngle: "Hemet has one of the highest concentrations of seniors in Riverside County — nearly 23% of residents are 65 or older. Seniors drive less, which means their batteries die more often. They're more prone to lockouts. And when they're stranded, the stress hits harder. We flag every senior call, give it priority dispatch, and our drivers are trained to be patient and reassuring, not rushed.",
     faqs: [
-      { q: "How fast can you get to Florida Avenue from a call?", a: "Most roadside calls within Hemet city limits see a truck in 20-30 minutes. We stage drivers based on the area — East Hemet and Florida Ave get priority because call volume is highest there." },
-      { q: "Do you help with senior-specific issues like walker retrieval from locked cars?", a: "Absolutely. We help seniors get back into their vehicles, retrieve mobility aids, and arrange rides if needed. Just tell the dispatcher it's a senior call." },
+      { q: "What do you do if my battery is completely dead at Florida and Stetson?", a: "We bring a heavy-duty jump pack that can start any vehicle, even SUVs and trucks with completely drained batteries. If the battery is physically damaged or won't hold a charge, we can tow you to a nearby shop. Firestone on Florida Ave and the auto parts stores on Stetson are our most common drop-offs." },
+      { q: "Do you offer a senior discount for roadside calls?", a: "Yes — 10% off for Hemet-area seniors. Just mention it when you call and we'll apply it. We also flag senior calls for priority dispatch so you're not waiting in the heat longer than necessary." },
+      { q: "Can you help if I locked my keys in the car at Diamond Valley Lake?", a: "Absolutely. Our lockout tools work on all makes and models. Call us with your location and we'll get you back in your car. If you're at the lake and the sun is going down, tell the dispatcher — we'll prioritize that call." },
     ],
   },
 
   "hemet:long-distance-towing": {
     hook: "Hemet sits at the junction of the 79, 74, and 79 corridor — the gateway to San Diego, Orange County, and the rest of the Inland Empire. When your car breaks down on the way out of the valley, you need a tow that can go the distance.",
-    commonScenarios: [
-      "Broken-down vehicles on the 79 heading toward Temecula for repairs",
-      "Cars that overheated on the 74 grade coming out of Hemet toward Orange County",
-      "Vehicle delivery to dealerships in San Diego or Los Angeles",
-      "Classic car transport from Hemet to shows or buyers across Southern California",
+    content: [
+      "The 74 westbound out of Hemet toward Orange County is the most common long-distance route we cover, and it's also the most punishing on vehicles. The steep grade climbing out of the valley pushes cooling systems to the breaking point, especially in summer when ambient temperatures are already over 100°F. Cars that are marginal in the valley overheat halfway up the grade, leaving the driver stranded on a mountain road with no shoulder and no cell service. We've pulled more cars off that stretch of the 74 than any other long-distance route in the region.",
+      "For tows south on the 79 toward Temecula and San Diego, the distance itself isn't the problem — it's the rural stretch between Hemet and Temecula where services are nonexistent. If your car dies in that gap, you're looking at a minimum thirty-mile tow just to get to a shop that can work on it. We handle these tows on flatbed trucks exclusively, because towing a disabled vehicle that distance with a wheel-lift puts unnecessary wear on the car's drivetrain. Every vehicle we transport for distance goes on a flatbed, no exceptions.",
+      "We also handle a steady volume of vehicle delivery work — cars being sold privately or traded in that need to get from Hemet to a buyer or dealership in another city. These aren't breakdowns, but they require the same level of care: proper tie-downs, insurance coverage during transport, and accurate delivery timelines. Whether it's a classic car headed to a show in San Diego or a commuter's daily driver being delivered to a shop in Orange County, we treat every long-distance tow as if it's our own vehicle on the bed.",
     ],
-    localAngle: "Hemet's valley location means any trip to a major metro involves a mountain pass or long highway stretch. The 74 west and the 79 south both have steep grades that push aging cooling systems past their limit.",
-    neighborhoods: ["East Hemet (79 access)", "West Hemet (74 access)", "Downtown Hemet"],
-    roads: ["CA-74", "CA-79", "Domenigoni Parkway", "Florida Ave"],
+    localAngle: "Hemet's valley location means any trip to a major metro involves a mountain pass or long highway stretch. The 74 west and the 79 south both have steep grades that push aging cooling systems past their limit. We carry extra coolant and diagnostic tools specifically for these routes, so we can often diagnose the overheating cause before we even start the tow.",
     faqs: [
-      { q: "Can you tow from Hemet to San Diego?", a: "Yes — we handle cross-city tows to San Diego, Los Angeles, Orange County, and anywhere in the IE. Flatbed trucks keep your vehicle safe for the long haul." },
+      { q: "How much does a long-distance tow from Hemet to San Diego cost?", a: "Pricing depends on distance and vehicle type. A standard passenger car from Hemet to San Diego runs approximately $350 to $500. We'll give you a firm quote before we hook up — no surprises." },
+      { q: "Do you use flatbed trucks for long-distance tows?", a: "Yes, always. Every vehicle we tow more than ten miles goes on a flatbed. Wheel-lift tows are fine for short distances, but for a thirty-mile haul, the flatbed protects your tires, alignment, and drivetrain." },
+      { q: "Can you tow my car to a specific shop in another city?", a: "Absolutely. Tell us the address of the shop when you call. We deliver to dealerships, independent garages, body shops, and private residences in any city within our range." },
     ],
   },
 
   "hemet:motorcycle-towing": {
     hook: "Highway 74 through the San Jacinto Mountains is one of Southern California's best motorcycle roads — and one of the most dangerous when something goes wrong. We specialize in bike recovery from the mountain passes and valley roads Hemet riders know well.",
-    commonScenarios: [
-      "Sportbike breakdowns on the 74 twisties — overheated engines and electrical failures mid-corner",
-      "Cruiser flats on the long straight stretches of Florida Avenue",
-      "Dirt bike recoveries from the trails around Diamond Valley Lake",
-      "Locked keys or dead batteries at Hemet biker meetups and events",
+    content: [
+      "The 74 twisties between Hemet and the Ortega Highway intersection are a magnet for sportbike riders from across the Inland Empire. But the combination of technical curves, loose gravel at the edges, and afternoon heat that can melt asphalt makes this one of the highest-incident motorcycle roads in the region. The most common calls we get are overheated engines — bikes don't have the cooling capacity of cars, and a sportbike pushing hard through the 74 on a 105-degree day will eventually give up. When it does, you're stuck on a mountain road with no shade and traffic coming around blind corners.",
+      "Diamond Valley Lake draws a different crowd — cruiser riders and weekend tourers who take Newport Road and the valley approaches at a more relaxed pace. The problem here isn't mechanical so much as environmental: road debris from construction traffic, sand washed onto the pavement from the hills, and the occasional animal crossing. A front-end flat at speed on a cruiser is a serious situation, and we've recovered bikes from that road at all hours. Our motorcycle tow rig uses soft straps and wheel chocks exclusively — no metal touches your bike's frame or paint, regardless of how badly damaged it is.",
+      "Local Hemet riders also break down in less dramatic ways — dead batteries at biker meetups near downtown, locked keys at the grocery store on Stetson, or a stalled bike on Florida Avenue that won't restart in the heat. These are quick calls for us, but they're a major inconvenience for a rider stuck on the side of the road in full gear. We carry a dedicated motorcycle jump pack and a full set of tie-downs on every truck, so whether your bike is a Harley bagger or a Ninja, we have the right gear ready.",
     ],
-    localAngle: "The Ortega Highway (74) connection to San Juan Capistrano draws riders from across Southern California. The route is technical, remote, and hot — a bad combination for bikes that aren't perfectly maintained.",
-    neighborhoods: ["Diamond Valley Lake area", "Downtown Hemet", "East Hemet", "Valle Vista"],
-    roads: ["CA-74 (Ortega Highway)", "Florida Ave", "Warren Rd", "Domenigoni Parkway"],
+    localAngle: "The Ortega Highway connection to San Juan Capistrano draws riders from across Southern California, and they all pass through Hemet to get there. The route is technical, remote, and hot — a bad combination for bikes that aren't perfectly maintained. We see more motorcycle breakdowns on the 74 corridor than any other road in the valley.",
     faqs: [
-      { q: "Do you use soft straps for motorcycle towing?", a: "Always. Soft tie-downs, wheel chocks, and padded rails — your bike never touches metal. We also carry extra tie-downs for custom builds with unusual fairings." },
+      { q: "Do you use soft straps for motorcycle towing?", a: "Always. Soft tie-downs over the handlebars or triple tree, wheel chocks for secure positioning, and padded rails on the bed. Your bike never touches metal. We also carry extra straps for custom builds with unusual fairings." },
+      { q: "What happens if my bike has crash damage and won't roll straight?", a: "We have a winch and a tilting bed that can load a bike in any condition — even if the front end is destroyed or the wheels won't turn. We'll secure it in whatever position is safest and transport it to your chosen shop." },
+      { q: "Can you tow a motorcycle from the 74 twisties if I'm alone?", a: "Yes, and we'll also give you a ride to the nearest gas station or meet point. Our trucks are crewed by two-person teams, so one driver handles the bike while the other makes sure you're taken care of." },
     ],
   },
 
   "hemet:heavy-duty-towing": {
     hook: "Hemet's industrial base on the east side and the growing warehouse distribution centers around Domenigoni Parkway mean Class 3-8 trucks are on Hemet roads every day. When a commercial vehicle goes down, downtime costs money — we get there fast.",
-    commonScenarios: [
-      "Semi-truck breakdowns on Domenigoni Parkway near the warehouse district",
-      "Construction equipment transport from Hemet job sites to the next project",
-      "Fleet vehicle recovery for local delivery companies during peak heat",
-      "RV towing from Diamond Valley Lake campgrounds and storage lots",
+    content: [
+      "The heaviest commercial traffic in Hemet runs along Domenigoni Parkway and the eastern stretch of Florida Avenue, where distribution centers and industrial parks have multiplied over the past few years. Box trucks, delivery vans, and the occasional semi-tractor are common sights on these roads, and when one of them breaks down, it's not just the driver who's affected — it's the entire supply chain. We've recovered everything from a UPS truck with a seized engine on Florida Avenue to a livestock hauler with a blown tire on Domenigoni, and in every case, the priority is getting the vehicle off the road and to a repair facility as fast as possible.",
+      "Construction equipment towing is a different beast entirely. Hemet's growth means excavators, dump trucks, and concrete mixers are constantly moving between job sites, and when a piece of equipment breaks down mid-transport, it usually blocks the road completely. These recoveries require heavy-duty rotators and specialized rigging that standard tow trucks don't have. We partner with operators who run the kind of equipment that can lift a disabled excavator onto a low-boy trailer without causing additional damage, and we coordinate the recovery with local law enforcement when lane closures are needed.",
+      "RV towing is another category that falls under heavy duty in Hemet, especially around Diamond Valley Lake. Campers, fifth wheels, and motorhomes break down on the approach roads — Newport Road and Domenigoni — where the grades and heat stress their aging chassis and cooling systems. Towing an RV is different from towing a car: the weight distribution, the height clearance, and the risk of damage to the living quarters all require specialized knowledge. Our heavy-duty operators are trained specifically on RV recovery and can handle anything from a pop-up trailer to a forty-foot diesel pusher.",
     ],
-    localAngle: "Hemet's commercial corridor is concentrated around Florida Avenue and Domenigoni Parkway, both of which see heavy truck traffic during business hours and limited shoulder space for breakdowns. Time is money — we know these operators can't wait.",
-    neighborhoods: ["East Hemet (industrial)", "Domenigoni corridor", "Florida Ave commercial"],
-    roads: ["Domenigoni Parkway", "Florida Ave", "Stetson Ave", "Warren Rd"],
+    localAngle: "Hemet's commercial corridor is concentrated around Florida Avenue and Domenigoni Parkway, both of which see heavy truck traffic during business hours and limited shoulder space when something goes wrong. A disabled semi on Domenigoni at 4 PM can back up traffic for a mile in both directions. We clear these calls as a priority not just for the operator, but for everyone else trying to get home.",
     faqs: [
-      { q: "What class trucks do you handle?", a: "Class 3 through Class 8 — from box trucks and delivery vans all the way up to semi-tractors and heavy equipment. We have the right rig for the job." },
+      { q: "What class trucks can you handle?", a: "Class 3 through Class 8 — from box trucks and delivery vans all the way up to semi-tractors and heavy equipment. We have the right rig for every job, including rotators for the heaviest recoveries." },
+      { q: "Do you work with fleet operators who have multiple vehicles?", a: "Yes. We offer fleet accounts for Hemet-area businesses with priority dispatch and consolidated billing. Call us to set up an account — we'll get your fleet vehicles back on the road faster." },
+      { q: "Can you tow a motorhome from Diamond Valley Lake?", a: "Absolutely. We handle Class A, B, and C motorhomes, fifth wheels, and travel trailers. Our heavy-duty trucks can safely recover an RV of any size from the lake area or anywhere in Hemet." },
     ],
   },
 
   // ─── SAN JACINTO ─────────────────────────────────────────
 
-  "san-jacinto:roadside-assistance": {
-    hook: "San Jacinto is a commuter city — people live here and drive to work, school, and the casino. That means cars are pushed daily, and breakdowns happen at the most inconvenient times. We know the roads and the rhythms.",
-    commonScenarios: [
-      "Dead batteries at Soboba Casino's parking lot after late-night sessions",
-      "Student lockouts and flats near Mt. San Jacinto College — especially at semester start",
-      "Accidents and breakdowns on the Ramona Expressway at peak commute hours",
-      "Overheated vehicles on State Street during summer afternoons",
+  "san-jacinto:emergency-towing": {
+    hook: "San Jacinto's busiest roads — Ramona Expressway, State Street, and the casino approach on Soboba Road — see accidents and breakdowns that range from fender benders to serious wrecks. When it happens, seconds count, and we're the closest tow operation to the scene.",
+    content: [
+      "The Ramona Expressway is San Jacinto's most dangerous road, and it's not close. With a high speed limit, minimal lighting on the eastern stretches, and intersections that see frequent T-bone collisions, this road generates more emergency towing calls than any other in the city. The intersection with Sanderson Avenue is particularly bad — we've pulled wrecked cars out of that crossing more times than we can count. When a call comes in from the Expressway, we dispatch immediately and coordinate with San Jacinto PD on the approach, because every minute that wreck sits in the travel lane is another minute someone could rear-end it.",
+      "The Soboba Casino area generates its own category of emergency calls — late-night wrecks on Soboba Road and State Street driven by visitors who aren't familiar with the roads, combined with the occasional DUI incident. The casino draws people from across the Inland Empire, and many of them are driving home late at night on roads they don't know. We get calls from the casino parking lot and the surrounding streets on a regular basis, and we've developed a relationship with casino security that lets us get on-scene quickly when needed.",
+      "Student-area incidents around Mt. San Jacinto College peak at the beginning of each semester and during final exam weeks, when the campus lots are full and traffic around State Street and Esplanade Avenue is at its worst. Fender benders in the parking lots, breakdowns from poorly maintained student cars, and the occasional more serious accident at the intersection of State and Esplanade keep us busy during the academic year. We know the campus layout and the surrounding streets, so when a student calls, we can find them without the back-and-forth.",
     ],
-    localAngle: "The Ramona Expressway is a high-speed connector between San Jacinto and Hemet with limited shoulders. Accidents here back up fast and need priority response to clear lanes and get drivers to safety.",
-    neighborhoods: ["Soboba Springs / Casino area", "Downtown San Jacinto", "Mt. San Jacinto College area"],
-    roads: ["Ramona Expressway", "State St", "San Jacinto Ave", "Soboba Rd", "Esplanade Ave"],
+    localAngle: "The Ramona Expressway has the highest rate of serious accidents in San Jacinto, and the speed limits combined with limited lighting create conditions where a breakdown can escalate into a multi-vehicle collision within minutes. We stage a driver near the Expressway during peak hours specifically for emergency response to this corridor.",
     faqs: [
-      { q: "How long does a roadside call take on the Ramona Expressway?", a: "We aim for 20-30 minutes on the Expressway. Traffic conditions can slow us down at peak hours, but we dispatch from the closest driver." },
+      { q: "How quickly can you respond to a wreck on the Ramona Expressway?", a: "We aim for 15 to 20 minutes on the Expressway during peak hours when we have a driver staged nearby. If you're in the eastern stretch past Sanderson, add a few minutes — that section has the longest response time in the city." },
+      { q: "Do you work with Soboba Casino security on accident scenes?", a: "Yes, we coordinate regularly with the casino's security team. If you're on casino property, security will help direct us to your exact location." },
+      { q: "What if it's a hit-and-run and I need a tow from the scene?", a: "Call us and file a police report with San Jacinto PD. We'll tow your vehicle to a secure lot or your preferred shop and work with your insurance to make sure everything is documented properly." },
+    ],
+  },
+
+  "san-jacinto:roadside-assistance": {
+    hook: "San Jacinto is a commuter city — people live here and drive to work, school, and the casino every day. That means cars are pushed harder and break down at the worst possible times, usually when you're already running late.",
+    content: [
+      "Dead batteries in the Soboba Casino parking lot are our most frequent roadside call in San Jacinto, and they cluster around the late-night hours when visitors are heading home after several hours inside. The combination of lights left on, a battery that was already marginal, and the heat soak from sitting in an asphalt lot for hours creates a perfect storm for a no-start. We carry a dedicated jump pack that can handle even the biggest SUVs and trucks, and most of these calls are resolved in under fifteen minutes from the time we arrive.",
+      "The Mt. San Jacinto College area generates a steady stream of student calls — lockouts, dead batteries, and the occasional flat tire from the potholes on Esplanade Avenue. These calls spike at the start of each semester when students return to cars that have been sitting unused for months, and during exam weeks when the lots are packed and tempers are short. We keep a driver positioned near the college during peak academic hours specifically for these calls.",
+      "Overheating on State Street and the Ramona Expressway is a seasonal problem that peaks in July and August, when San Jacinto's summer temperatures match Hemet's. The stop-and-go traffic on State Street, combined with aging cooling systems on commuter cars, leads to steam clouds and stalled vehicles that block traffic. These calls require a quick flatbed recovery to get the car off the road before the heat causes additional engine damage, and we always check the coolant level before we tow — sometimes a simple refill at the scene can save the engine.",
+    ],
+    localAngle: "San Jacinto's traffic pattern means the same cars run the same routes every day — Ramona Expressway in the morning, State Street at lunch, Soboba Road in the evening. That repetition lets us predict where breakdowns will happen and stage drivers accordingly. We know which intersections generate the most calls and at what time of day.",
+    faqs: [
+      { q: "What if I lock my keys in the car near the college?", a: "Call us and we'll be there in 15 to 20 minutes. Our lockout tools work on all makes and models. If you're in the student lot, tell us which section — we know the campus layout and can find you without the back-and-forth." },
+      { q: "Can you jump-start a car at the casino parking lot if it's completely dead?", a: "Yes. Our jump pack handles everything from compact cars to full-size trucks, even with a completely drained battery. If the battery is cracked or swollen from the heat, we'll recommend a tow to the nearest shop instead." },
     ],
   },
 
   "san-jacinto:long-distance-towing": {
-    hook: "San Jacinto sits just north of Hemet with easy access to the 79 and the 74, making it a common starting point for trips to Temecula, Palm Springs, and the coast. When a trip gets cut short by a breakdown, we cover the distance.",
-    commonScenarios: [
-      "Cars that break down on the 79 toward Hemet and need continued transport to a specific shop",
-      "Overheated vehicles on the way back from Soboba Casino to homes in other cities",
-      "Transport from San Jacinto to dealerships or repair shops in the wider IE",
-      "Student vehicles needing towing from the college area to home garages in other cities",
+    hook: "San Jacinto sits just north of Hemet with access to the 79 and the Ramona Expressway, making it a common starting point for trips to Temecula, Palm Springs, and the rest of the IE. When a trip gets cut short by a breakdown, we cover the distance.",
+    content: [
+      "The most common long-distance tow out of San Jacinto is from the 79 corridor heading south, where cars break down on the way to Temecula or San Diego. The rural stretch between San Jacinto and Temecula has no services and limited cell reception, so when a car dies there, the driver is completely isolated. We handle these tows with flatbed trucks exclusively — the distance alone justifies it, and the condition of the vehicle after a highway breakdown is often worse than the driver realizes. A car that overheated on the 79 and then sat for thirty minutes before the tow arrives usually needs to go straight to a shop, not to a home garage.",
+      "The casino generates its own long-distance towing demand — visitors from outside San Jacinto whose cars break down while they're at Soboba and need to be towed back to their home city. These range from simple breakdowns in the parking lot to more complex situations where a car was involved in an accident on the way in. We coordinate with the casino's valet and security teams on these calls, and we handle the insurance paperwork for the guest so they don't have to manage a tow claim from two cities away.",
+      "We also do a steady business towing vehicles from San Jacinto dealerships and private sellers to buyers in other parts of Southern California. The car market in the IE is regional — a buyer in San Diego finds a truck listed in San Jacinto, a classic car sells to a collector in Orange County, a student's car needs to get home to LA. These aren't emergency tows, but they require the same professional handling: full insurance coverage, accurate scheduling, and damage-free transport with photographic documentation of the vehicle's condition before and after the tow.",
     ],
-    localAngle: "San Jacinto's location north of the 79 junction means most long-distance routes involve at least one mountain grade or high-speed highway section. We plan routes that avoid steep tows when possible.",
-    neighborhoods: ["Downtown San Jacinto", "Soboba area", "Ramona Expressway corridor"],
-    roads: ["Ramona Expressway", "CA-79", "State St", "San Jacinto Ave"],
+    localAngle: "San Jacinto's position as a bedroom community means people commute out of the city for work and entertainment — and they need to get back when something goes wrong. A long-distance tow from San Jacinto is often about bringing the car home, not taking it somewhere else, and we structure our pricing around that reality.",
+    faqs: [
+      { q: "Can you tow my car from Soboba Casino back to Temecula or Murrieta?", a: "Yes. We handle tows from the casino to any city in the IE. Flatbed only, full insurance, and we can coordinate with the casino's valet for pickup." },
+      { q: "How much does it cost to tow from San Jacinto to San Diego?", a: "For a standard passenger car, expect approximately $350 to $500 depending on the exact route. We'll give you a firm quote before the truck arrives." },
+    ],
   },
 
-  "san-jacinto: motorcycle-towing": {
-    hook: "The roads around San Jacinto — from the Soboba foothills to the long stretches of the Ramona Expressway — are popular with local riders. But the combination of heat, rural roads, and occasional mountain gravel makes breakdowns a real risk.",
-    commonScenarios: [
-      "Sportbike stalls on the winding Soboba Rd approach to the casino area",
-      "Cruiser breakdowns on long rides through the Ramona Expressway corridor",
-      "Dirt bike recoveries from trails near Diamond Valley Lake access points",
-      "Battery and electrical failures on bikes parked in the heat at Mt. San Jacinto College lots",
+  "san-jacinto:motorcycle-towing": {
+    hook: "San Jacinto's roads — from the Soboba foothills to the long stretches of the Ramona Expressway — are popular with local riders. But the combination of heat, rural conditions, and mountain gravel makes breakdowns a real risk on even a short ride.",
+    content: [
+      "The Ramona Expressway is the most common location for motorcycle breakdowns in San Jacinto, which is unusual — normally bikes struggle on twisty mountain roads, not straight highways. But the Expressway's high speed limits and the heat shimmer off the asphalt create conditions that punish bikes with marginal cooling or tired electrical systems. We've recovered sportbikes, cruisers, and touring bikes from the Expressway shoulder at all hours, and in every case the rider was stranded without easy access to shade or water. Our motorcycle tow rig is on every truck, so whichever driver is closest to your location can handle the recovery without needing a specialty vehicle.",
+      "Soboba Road winding up toward the casino complex is a favorite route for riders coming from Hemet and the west side of the valley. The curves are fun but deceptive — loose gravel collects at the edges from the unpaved side roads, and bikes that cut a corner too wide can lose traction on the shoulder. We respond to these calls with extra caution because the rider may have gone down, not just broken down. If there's any indication of an injury, we hold back and let medical personnel clear the scene first, then recover the bike once it's safe.",
+      "Local riders also break down in the most mundane ways — a dead battery on State Street after a quick errand, a flat tire from a nail picked up in a residential neighborhood, or a key left in the ignition of a parked bike at the grocery store. These calls are quick but they happen more often than you'd think, especially during summer when the heat drains batteries that were already on their way out. We carry a motorcycle-specific jump pack on every truck, so even if you're twenty miles from our closest heavy-duty rig, the first responder can handle your bike.",
     ],
-    localAngle: "San Jacinto's mix of suburban commuting and rural riding means bikes here face both stop-and-go heat stress and high-speed highway wear. We see electrical failures from both extremes.",
-    neighborhoods: ["Soboba Springs area", "Ramona Expressway", "Mt. San Jacinto College"],
-    roads: ["Soboba Rd", "Ramona Expressway", "State St", "Sanderson Ave"],
+    localAngle: "San Jacinto's mix of suburban commuting and rural riding means bikes face both stop-and-go heat stress on State Street and high-speed wear on the Expressway. We see electrical failures from both extremes, and the summer heat accelerates every type of breakdown by weeks or months.",
+    faqs: [
+      { q: "Do you charge extra for motorcycle towing?", a: "No. We charge the same base rate for motorcycle towing as for passenger cars. The soft straps, wheel chocks, and padded rails are standard equipment on every truck." },
+      { q: "What if my bike went down on Soboba Road and there's bodywork damage?", a: "We'll secure it in whatever position is safest, using extra padding if needed to prevent further damage. Our goal is to get your bike to a shop without adding to the repair cost." },
+    ],
   },
 
   "san-jacinto:heavy-duty-towing": {
-    hook: "San Jacinto's commercial activity centers around Soboba Casino's supply chain, local agriculture, and construction projects tied to the city's steady growth. When a heavy vehicle goes down, the impact ripples through the operation.",
-    commonScenarios: [
-      "Delivery trucks for Soboba Casino needing recovery on Soboba Rd",
-      "Agricultural equipment transport from farms around the Ramona Expressway",
-      "Construction equipment breakdowns at new development sites",
-      "Fleet vehicle recovery for local service companies",
+    hook: "San Jacinto's commercial activity centers around Soboba Casino's supply chain, local agriculture, and construction tied to the city's steady growth. When a heavy vehicle goes down, the impact ripples through the operation.",
+    content: [
+      "Soboba Casino's supply chain runs 24 hours a day — food delivery trucks, beverage distributors, service vehicles, and guest shuttles are constantly coming and going on Soboba Road. When one of these vehicles breaks down, it's not just a recovery — it's a logistical problem for the casino's operations team. They need the vehicle off the road and onto a repair rack as quickly as possible to minimize disruption to their supply schedule. We've developed a working relationship with the casino's logistics department that lets us coordinate recoveries without adding to their operational headaches.",
+      "The agricultural operations around San Jacinto — mostly along the Ramona Expressway and the rural roads branching off it — generate a different category of heavy-duty calls. Tractors, hay trucks, and livestock trailers break down on roads that weren't designed for commercial vehicles, and when they do, there's no shoulder and no easy way to get around them. A disabled hay truck on a narrow rural road can block access to multiple properties, and the window for a safe recovery is limited by daylight and weather conditions. We handle these calls with agricultural-sector experience — we know how to secure a livestock trailer without spooking the animals, and we know which roads can handle a heavy rotator and which ones will need a lighter approach.",
+      "New construction in San Jacinto's developing neighborhoods generates calls for equipment transport and breakdown recovery. Excavators, mini-excavators, and dump trucks move between sites on roads like State Street and Esplanade Avenue, and when they break down mid-route, the situation can block an entire block. We coordinate with the city's development office when needed to arrange lane closures or road permits for oversized recoveries, and our heavy-duty partners have the low-boy trailers and rotators to handle equipment of any size.",
     ],
-    localAngle: "Soboba Casino's supply chain runs 24/7 — delivery trucks, service vehicles, and shuttles. A breakdown at the wrong time can disrupt operations, so we prioritize commercial calls in the Soboba corridor.",
-    neighborhoods: ["Soboba Casino area", "Ramona Expressway commercial", "Downtown industrial"],
-    roads: ["Soboba Rd", "Ramona Expressway", "State St"],
+    localAngle: "Soboba Casino generates more commercial traffic than all other San Jacinto businesses combined, and the casino's 24-hour operation means heavy truck traffic at all hours. We prioritize commercial calls in the Soboba corridor and have direct contact information for the casino's logistics team.",
+    faqs: [
+      { q: "Do you offer fleet accounts for San Jacinto businesses?", a: "Yes. Fleet accounts come with priority dispatch, consolidated monthly billing, and a dedicated dispatch contact. Call us to set it up." },
+      { q: "Can you handle a livestock trailer recovery on a narrow rural road?", a: "Yes, and we take extra precautions to keep the animals calm and secure. We know the rural roads around San Jacinto and plan our approach accordingly." },
+    ],
   },
 
   // ─── WINCHESTER ──────────────────────────────────────────
 
-  "winchester:roadside-assistance": {
-    hook: "Winchester is rural — the kind of place where the next gas station is 10 miles away and cell service drops in patches along the 79. When you break down here, you're not just stuck — you're isolated. That's why we prioritize Winchester calls.",
-    commonScenarios: [
-      "Flat tires on the 79 between Winchester and Temecula — road debris is constant",
-      "Overheating on the approach to Diamond Valley Lake during summer hiking season",
-      "Dead batteries on rural roads like Simpson Rd where help is miles away",
-      "Lockouts at the lake trailhead parking lots after sunset",
+  "winchester:emergency-towing": {
+    hook: "When a car breaks down on the 79 through Winchester, there's no shoulder to pull onto, no gas station for miles, and often no cell service to call for help. Emergency towing here isn't about convenience — it's about getting you out of a dangerous situation before a secondary accident happens.",
+    content: [
+      "The 79 corridor through Winchester has the highest rate of secondary accidents in the San Jacinto Valley — cars that slow down to look at a disabled vehicle get rear-ended by drivers who don't expect a stopped car on a high-speed rural highway. Every minute a disabled car sits on the shoulder, or worse, partially in the travel lane, the risk of a second crash climbs significantly. That's why Winchester emergency calls are our highest-priority dispatches, regardless of time of day. We clear these scenes faster than any other type of call, often arriving within fifteen minutes from the closest driver.",
+      "Diamond Valley Lake approach roads — Newport Road and Sage Road — generate a different kind of emergency call. These roads are narrow, winding, and popular with both local drivers and visitors who don't know the terrain. During summer, the combination of heat, traffic headed to the lake, and the occasional overheating vehicle creates choke points that take miles to clear. We've recovered everything from a rental car that overheated on the Newport grade to a pickup truck that slid off Sage Road during a monsoon downpour. The common thread is that none of these drivers expected to need emergency towing on a road that seemed harmless.",
+      "Winchester's rural character means that when an emergency happens, the driver is isolated in a way that doesn't happen in a city. On Simpson Road or the back stretches of Winchester Road, there's no street lighting, no nearby homes, and often no cell reception. A breakdown at night on these roads is genuinely dangerous — oncoming traffic won't see a disabled car until it's too late, and the driver can't walk to get help because the next lit intersection is miles away. We've had calls where the only way to find the driver was to have them flash their phone light from the shoulder so we could spot them from a distance. We know these roads, we know which stretches have reception and which don't, and we use that knowledge to find drivers faster.",
     ],
-    localAngle: "Winchester is unincorporated with only 3,500 residents. Local towing options are basically nonexistent. If your car dies here, you're walking to a gas station or waiting hours for a national dispatcher — unless you call us.",
-    neighborhoods: ["79 Corridor", "Winchester Creek area", "Sage / DVL approach"],
-    roads: ["CA-79", "Winchester Rd", "Simpson Rd", "Newport Rd", "Sage Rd"],
+    localAngle: "Winchester's 79 corridor has the highest rate of secondary accidents in the valley because drivers aren't expecting stopped vehicles on a road that usually flows at 65-70 mph. Every minute matters. Our dispatch prioritizes Winchester emergency calls above all others for exactly this reason.",
     faqs: [
-      { q: "What if I have no cell service on the 79 near Winchester?", a: "Our dispatch logs the last known location from your call. Tell us what mile marker or landmark you passed, and we'll find you. We know every stretch of the 79." },
+      { q: "What if I break down on the 79 at night and can't see where I am?", a: "Turn on your hazards, stay in your vehicle with your seatbelt on, and call. Tell us the last landmark or intersection you passed. We know every mile marker on the 79 between Hemet and Temecula and will find you even without GPS coordinates." },
+      { q: "How is emergency towing different in a rural area like Winchester compared to a city?", a: "In Hemet, a breakdown is an inconvenience. In Winchester, it's a safety situation. Longer response corridors, fewer shoulders, less cell reception, and a higher risk of secondary accidents. We treat every Winchester emergency call with the urgency those conditions demand." },
+    ],
+  },
+
+  "winchester:roadside-assistance": {
+    hook: "Winchester is rural — the kind of place where the next gas station is ten miles away and cell service drops in patches along the 79. When you break down here, you're not just stuck — you're isolated. That's why we prioritize Winchester calls.",
+    content: [
+      "Flat tires on the 79 between Winchester and Temecula are our most common roadside call in this area, and they happen year-round. The rural highway accumulates road debris — truck tire retreads, construction material that fell off a flatbed, and the occasional piece of farm equipment that shed a part on the asphalt. Unlike a city flat where you can limp to a gas station, a blowout on the 79 at speed usually destroys the tire completely, leaving you stranded on a shoulder that's barely wide enough to stand on. We carry multiple spare tire sizes on our trucks because we never know what we'll find, and we can usually have you back on the road in under thirty minutes from the time we arrive.",
+      "Overheating on the Diamond Valley Lake approach roads — Newport Road and Sage Road — is a seasonal problem that spikes in summer. The grades coming down from the lake toward Winchester push cooling systems hard, and cars that are low on coolant or have marginal fans will fail halfway down. These calls are complicated by the fact that there's nowhere to pull off safely on the winding sections, and a stopped car on a blind curve creates a danger for every other vehicle on the road. We respond to these calls with lights on and a warning triangle deployment plan already in mind, because getting the scene secured is the first priority.",
+      "Dead batteries and lockouts in Winchester happen less frequently than in Hemet or San Jacinto, but when they do, the consequences are more severe. If your battery dies at the lake trailhead parking lot after sunset, you're miles from any services and the nearest jump start is either us or a forty-minute wait for a friend to drive out from Hemet. If you lock your keys in the car at a rural trailhead, you're either waiting for us or breaking a window. We carry a full set of lockout tools and a jump pack on every truck, and we treat every Winchester roadside call as a priority because we know there's no plan B for drivers in this area.",
+    ],
+    localAngle: "Winchester is unincorporated with only 3,500 residents. There are no local towing companies, no 24-hour gas stations, and no auto parts stores. If your car dies here, you're walking to a gas station or waiting hours for a national dispatcher to send someone from Temecula — unless you call us, which is why we make sure our coverage in Winchester is as fast as our urban response.",
+    faqs: [
+      { q: "What if I have a flat tire on the 79 and don't have a spare?", a: "No problem. We carry a tire inflator and plug kit for minor punctures, and a full-size spare that fits most common vehicles. If your tire is destroyed, we'll tow you to the nearest tire shop in Hemet or Temecula." },
+      { q: "Is there cell service on the 79 near Winchester?", a: "It's spotty. There are dead zones between the Winchester Creek exit and the Hemet border. If your call drops, try sending a text with your location — texts can go through when calls won't. Or use any mapping app that shares your location and send us the link." },
     ],
   },
 
   "winchester:long-distance-towing": {
     hook: "Winchester sits on the 79 between Hemet and Temecula — a rural corridor where cars commuting to the cities break down far from home. A long-distance tow from here isn't a luxury; it's the only way to get your car to a real repair shop.",
-    commonScenarios: [
-      "Cars that die on the 79 commute to Temecula and need transport to a Hemet or Murrieta shop",
-      "Overheating on the long uphill grade from Winchester toward Diamond Valley Lake",
-      "Breakdowns on the way to San Diego or Orange County that strand drivers in the rural stretch",
-      "Vehicle delivery from Winchester to buyers or dealerships in other cities",
+    content: [
+      "The 79 commute corridor is the most common source of long-distance towing calls in Winchester, and the pattern is always the same: a driver from Hemet or San Jacinto is headed to Temecula or Murrieta for work, their car starts overheating or making a bad noise somewhere in the Winchester stretch, and by the time they realize it's serious, they're twenty miles from home and fifteen miles from their destination. They don't know any shops in the area, they can't leave the car on the side of the road, and waiting for a tow from a national chain could mean hours of delay. We're on the 79 daily, we know the local shops in Hemet, Temecula, and Murrieta, and we can have the car delivered to the driver's preferred shop within the hour.",
+      "The approach to Diamond Valley Lake generates long-distance tows of a different type — recreational vehicles that break down on the way to the lake and need to be towed home or to a shop in another city. A fishing trip that ends with a smoking engine on Newport Road turns a day on the water into an expensive recovery, especially if the car needs to go back to San Diego or Orange County where the driver lives. These are the most expensive tows we do — fifty, sixty, sometimes seventy miles — but we flatbed every one of them and document the vehicle condition before and after transport so the driver's insurance claim goes smoothly.",
+      "Cross-county vehicle delivery from Winchester follows the same route patterns as the breakdown calls — south to Temecula, west to Orange County, or east to Palm Springs. We transport vehicles for private sellers, dealerships, and insurance companies, and Winchester's central location on the 79 makes it a convenient pickup point for all of them. The key difference between a planned transport and an emergency tow is the preparation time: with a planned delivery, we can schedule it for when we're already in the area instead of making a dedicated run, which saves the customer money without sacrificing service quality.",
     ],
-    localAngle: "Winchester's location between two major city clusters means people pass through, not stop. A breakdown here leaves you stranded in the middle of a 20-mile rural stretch with no services in sight.",
-    neighborhoods: ["79 Corridor", "Winchester Creek"],
-    roads: ["CA-79", "Winchester Rd", "Newport Rd"],
+    localAngle: "Winchester's location between two city clusters means every long-distance route involves a rural stretch with no services. We plan these tows to avoid unnecessary driving and always use flatbed trucks for distances over ten miles, because wheel-lift tows on long hauls damage tires and alignment.",
+    faqs: [
+      { q: "How much does it cost to tow from Winchester to Temecula?", a: "For a standard passenger car, approximately $150 to $250 depending on the exact distance. We'll give you a firm quote before we hook up." },
+      { q: "Can you deliver a vehicle I'm selling from Winchester to a buyer in San Diego?", a: "Yes. We handle private-party vehicle delivery with full insurance coverage, photographic documentation, and accurate scheduling. Call us with the pickup and drop-off addresses for a quote." },
+    ],
   },
 
   "winchester:motorcycle-towing": {
-    hook: "The 79 through Winchester is a favorite route for riders connecting Hemet to Temecula — sweeping curves, open stretches, and minimal traffic. But it's also remote, hot, and unforgiving if your bike decides to quit.",
-    commonScenarios: [
-      "Overheated engines on the long 79 stretch with no shade or pull-offs",
-      "Flat tires from road debris scattered on the rural highway shoulder",
-      "Electrical failures on older cruiser bikes during summer heat",
-      "Rider breakdowns — literally — where the biker needs a lift too",
+    hook: "The 79 through Winchester is a favorite route for riders connecting Hemet to Temecula — sweeping curves, open stretches, minimal traffic, and some of the best scenery in the valley. It's also remote, hot, and unforgiving when your bike decides to quit.",
+    content: [
+      "Overheated engines on the 79 Winchester stretch are the number one motorcycle breakdown we handle here, and they're almost always avoidable. Riders coming from Hemet hit the rural stretch at speed, and the combination of high RPMs on bikes that may not have been serviced recently, ambient temperatures over 100°F, and the lack of any shade or pull-off areas creates conditions that punish cooling systems. Unlike a car, a bike that overheats on the 79 can't just pull over and wait — the engine may not restart at all, and the rider is left straddling a disabled bike on a highway shoulder that's barely wide enough for both tires. We bring a specialized motorcycle ramp and soft straps on every call, and we can load most bikes in under ten minutes.",
+      "Road debris on the 79 corridor is a constant problem for riders. Truck retreads, construction material, and farm-related debris that falls off flatbeds collects on the shoulders, and when a rider moves over to give a passing truck room, they can run over something that shreds a tire or damages a wheel. A front-end flat at 65 mph on a motorcycle is a serious event, and the rider is often shaken up even if they managed to keep the bike upright. We respond to these calls with extra time for the rider to collect themselves before we touch the bike, and we always offer the rider a ride to a safe location while their bike is being loaded.",
+      "The Diamond Valley Lake approach — Sage Road and Newport Road — draws riders from Hemet and San Jacinto for the curves and the scenery, but the roads are unpredictable. Sand washes across the pavement after dry spells, gravel accumulates at the edges from the unpaved side roads, and the occasional animal crossing adds a hazard that doesn't exist on the main highways. We get calls from this area after weekends and holidays when the lake traffic is heaviest, and from riders who went down on a patch of gravel that they never saw coming. In those cases, we're recovering a downed bike with possible body damage, and we handle it with extra care — padding exposed areas, using auxiliary straps for unusual damage patterns, and helping the rider file the insurance documentation.",
     ],
-    localAngle: "The 79 corridor between Hemet and Temecula has exactly one gas station with a repair shop for the entire stretch. If your bike goes down between them, you're waiting on a tow regardless.",
-    neighborhoods: ["79 Corridor", "Sage / DVL approach"],
-    roads: ["CA-79", "Winchester Rd", "Sage Rd"],
+    localAngle: "The 79 corridor between Hemet and Temecula has exactly one gas station with basic repair services for the entire stretch. If your bike goes down between them, you're waiting on a tow regardless of how minor the problem is, which is why we carry a full toolkit and diagnostic gear on every truck — sometimes the fix is simple enough to do on the shoulder.",
+    faqs: [
+      { q: "Can you tow two motorcycles at once if we're riding together?", a: "Yes, if both bikes fit on one flatbed. Our standard bed can carry two sportbikes or one full-dress cruiser. If they won't both fit, we'll send a second truck — no extra dispatch fee for riders in the same group." },
+      { q: "What if I dropped my bike and it won't roll straight?", a: "We have a winch and tilting bed that can load a bike in any condition. We'll secure it with extra straps and padding as needed, get it to a shop, and document all damage for your insurance." },
+    ],
   },
 
   "winchester:heavy-duty-towing": {
-    hook: "Winchester's agricultural roots mean heavy equipment — tractors, hay trucks, livestock haulers — shares the road with commuters. When a farm vehicle goes down on the 79, it blocks the corridor and needs heavy gear to move.",
-    commonScenarios: [
-      "Farm equipment breakdowns on Winchester Rd during harvest season",
-      "Hay truck and livestock trailer recoveries on the 79",
-      "Construction equipment transport for rural development projects",
-      "Flatbed recovery of disabled vehicles too large for standard tow trucks",
+    hook: "Winchester's agricultural roots mean heavy equipment — tractors, hay trucks, livestock haulers — shares the road with suburban commuters. When a farm vehicle goes down on the 79, it's not just a commercial problem — it blocks the entire corridor.",
+    content: [
+      "Farm equipment breakdowns on Winchester Road and the 79 corridor are seasonal but predictable. During harvest season, combines, tractors, and hay trucks move between fields on roads that weren't designed for their weight or width, and mechanical failures on equipment that works sixteen-hour days during harvest are inevitable. When a combine breaks down on Winchester Road at 6 PM during July, it blocks the entire road — there's no way around a piece of equipment that's fifteen feet wide and twenty feet long. Our heavy-duty partners have the rotators and low-boy trailers needed to recover these vehicles, and we coordinate with the county road department when lane closures are required.",
+      "Livestock trailer recoveries on the 79 corridor require a different kind of expertise. When a trailer carrying cattle, horses, or other livestock breaks down on a hot day, the primary concern isn't the trailer — it's the animals inside. We work with operators who understand livestock handling: how to position the recovery vehicle without spooking the animals, how to maintain ventilation during the repair or reloading process, and when to call a livestock transport specialist instead of attempting to move the trailer ourselves. These are the highest-stakes recoveries we handle, and we treat them with the gravity they deserve.",
+      "Construction equipment transport for rural development projects around Winchester, Sage, and the Diamond Valley Lake area generates steady work throughout the year. Excavators, dump trucks, and bulldozers move between job sites on roads like Simpson Road and Newport Road, and equipment breakdowns on these routes can block access to multiple properties. We handle these recoveries with the same heavy-duty rotator equipment used for urban commercial calls, but with additional attention to road conditions — a fully loaded low-boy on a rural road with soft shoulders requires a different driving approach than the same load on a city street.",
     ],
-    localAngle: "Rural roads mean heavier equipment and fewer shoulders. A broken-down tractor on Winchester Rd can block both lanes. Our heavy-duty fleet can clear it without damaging the equipment or the road.",
-    neighborhoods: ["Winchester Creek area", "79 Corridor", "Sage area"],
-    roads: ["Winchester Rd", "Simpson Rd", "CA-79", "Newport Rd"],
+    localAngle: "Rural roads around Winchester are narrow, unlit, and have soft shoulders that can't support heavy equipment. A broken-down tractor or fully loaded hay truck can block a road for hours. Our heavy-duty operators know which roads can handle a rotator and which ones need a lighter approach to avoid getting stuck themselves.",
+    faqs: [
+      { q: "Can you recover a tractor that went into a ditch?", a: "Yes. Our heavy-duty operators are experienced with farm equipment recovery and have the rigging and rotator capacity to pull a tractor out of a ditch without causing additional damage to the equipment or the road." },
+      { q: "What if I have a livestock trailer breakdown on the 79?", a: "Call us immediately. We'll dispatch an operator who understands livestock handling and prioritize the recovery to minimize the time animals are in transit or stopped in the heat." },
+    ],
   },
 
   // ─── MENIFEE ─────────────────────────────────────────────
 
-  "menifee:roadside-assistance": {
-    hook: "Menifee is growing fast — 117,000 people and counting — which means more cars on the road, more construction debris, and more breakdowns. The retirement community in Sun City alone generates more roadside calls per capita than any other part of the valley.",
-    commonScenarios: [
-      "Sun City senior lockouts and dead batteries — the most common call we get in Menifee",
-      "Flat tires from construction debris on Scott Rd and Ethanac Rd in the new development areas",
-      "Overheating on Newport Rd during the afternoon commute",
-      "Empty gas tank calls from drivers who underestimated the distance between Menifee stations",
+  "menifee:emergency-towing": {
+    hook: "Menifee's rapid growth means more cars on the road, more construction zones, and more accidents. From the Sun City 55+ community to the Newport Road corridor where rush-hour collisions are a daily occurrence, emergency towing in Menifee requires speed, local knowledge, and an understanding of who's behind the wheel.",
+    content: [
+      "Newport Road and Antelope Road are Menifee's highest-crash intersections, and they generate more emergency towing calls than any other locations in the city. The combination of high speed limits, heavy commuter traffic, and intersections that weren't designed for the current volume of vehicles creates conditions where accidents happen daily. Rear-end collisions at the Newport Road and Antelope Road intersection are particularly common — drivers in a hurry misjudge the light timing, and the resulting fender benders block the intersection during peak hours. We've pulled cars out of that intersection at every time of day and in every weather condition, and we know exactly how to position our trucks to clear the scene without disrupting traffic any more than necessary.",
+      "Emergency calls from Sun City — Menifee's 55-plus retirement community — have a different character than the rest of the city. When an elderly driver is involved in an accident or suffers a breakdown, the situation is often complicated by medical needs, confusion, and anxiety. A Sun City resident who rear-ends another car at a low speed may be more shaken than injured, but they're also more likely to need help arranging a ride home, contacting their insurance, and getting their car to a shop they trust. Our drivers are trained to handle these situations with extra patience — we don't rush elderly callers, we explain every step, and we make sure they have a way home before we leave with their car.",
+      "The construction zones in East Menifee — Scott Road, Ethanac Road, and the surrounding new developments — create emergency situations that don't exist in established neighborhoods. Unfinished roads with missing guardrails, construction debris in the travel lanes, and sudden lane shifts that confuse drivers who aren't familiar with the area all contribute to a steady stream of accident calls. These roads are changing rapidly as new developments open, and our drivers update their knowledge of the area weekly to make sure they know which roads are paved, which are still gravel, and where the construction zones have shifted.",
     ],
-    localAngle: "Sun City is a 55+ planned community with thousands of older drivers. They drive less, so batteries die more often. They're more prone to lockouts. And they need patient, respectful service — which is exactly what we provide.",
-    neighborhoods: ["Sun City", "Menifee Lakes", "Newport Road corridor", "East Menifee developments"],
-    roads: ["Newport Rd", "Sun City Blvd", "Scott Rd", "Antelope Rd", "Ethanac Rd", "Evans Rd", "Bradley Rd"],
+    localAngle: "Menifee is the fastest-growing city in the valley at 14% growth since 2020, and its infrastructure is struggling to keep up. Roads that were designed for suburban traffic volumes are carrying commuter-level loads, and the unfinished roads in East Menifee introduce hazards that don't exist elsewhere in the city.",
     faqs: [
-      { q: "Do you offer senior discounts in Menifee?", a: "Yes — 10% off for Sun City and Menifee seniors. Just mention it when you call." },
+      { q: "How fast can you respond to an accident in Sun City?", a: "We have drivers positioned specifically for Sun City coverage. Expect 15 to 25 minutes for accident calls in the retirement community and surrounding neighborhoods." },
+      { q: "What happens if I'm in an accident in a construction zone on Scott Road?", a: "Call us and move to a safe location if you can. If your car is blocking the construction zone, we'll coordinate with the site foreman to get it cleared without disrupting the work site. Our drivers know the East Menifee development roads and can navigate the construction safely." },
+    ],
+  },
+
+  "menifee:roadside-assistance": {
+    hook: "Menifee is growing fast — 117,000 people and counting — which means more cars on the road, more construction debris, and more breakdowns. The Sun City retirement community alone generates more roadside calls per capita than any other part of the valley, and the construction zones in East Menifee add their own category of problems.",
+    content: [
+      "Sun City lockouts and dead batteries are our most frequent calls in Menifee, and the pattern is remarkably consistent. A senior driver runs a quick errand, leaves the lights on or the keys in the car, and comes back to a vehicle that won't start or won't unlock. These calls happen year-round but spike during the summer when the heat accelerates battery drain and makes waiting outside uncomfortable for older drivers. We respond to every Sun City call with the understanding that the driver may need extra help — a door unlock combined with a jump start, assistance getting into the car on a hot day, and a quick check to make sure the car is actually running well before we leave. We don't rush these calls, and we never charge extra for the time it takes to make sure a senior driver is safe.",
+      "Flat tires from construction debris are uniquely a Menifee problem among the cities we serve. The rapid development in East Menifee — Scott Road, Ethanac Road, Evans Road — means construction trucks are constantly on the roads dropping screws, nails, and sharp metal that ends up in the travel lanes. Residents of the new housing developments are the most common victims, picking up nails on their own street that they didn't know were there. We repair or replace tires on these calls more than any other kind in Menifee, and we carry multiple tire plug kits and a universal spare that fits most vehicles because we know that's what we'll need.",
+      "The Newport Road corridor during afternoon commute hours generates its own class of roadside calls — overheating vehicles stuck in stop-and-go traffic on a road with few shoulders and no shade. Menifee commuters heading home from the 215 or I-15 sit in traffic on Newport Road, and their cars, which may have been marginal all day, finally give up in the last few miles before home. These calls require a quick response because a stalled car on Newport Road during peak hours creates a ripple effect that backs up traffic for blocks. We keep a driver stationed near the Newport Road and Antelope Road area during peak commute times specifically for these calls.",
+    ],
+    localAngle: "Sun City has the highest concentration of seniors in Menifee, and senior drivers need more roadside assistance per capita than any other demographic. They drive less, so their batteries die faster. They're more prone to lockouts. And when they're stranded, they need patient, clear communication. We flag every Sun City call for senior-priority handling.",
+    faqs: [
+      { q: "Do you have a senior discount for Menifee roadside calls?", a: "Yes — 10% off for Sun City and Menifee seniors. Just mention it when you call. We also prioritize senior calls during summer heat so you're not waiting outside longer than necessary." },
+      { q: "What if I picked up a nail on Scott Road in one of the new developments?", a: "Call us and we'll come plug the tire or swap it for your spare right at your location. If the tire is too damaged to repair, we can tow you to the nearest tire shop in Menifee." },
     ],
   },
 
   "menifee:long-distance-towing": {
-    hook: "Menifee is a bedroom community — thousands of residents commute to San Diego, Orange County, and Los Angeles every day. When your car breaks down on the way home, you need a tow that can get it the rest of the way.",
-    commonScenarios: [
-      "Cars that break down on the 215 or I-15 commute and need transport back to Menifee",
-      "Overheating on the 74 grade toward Lake Elsinore during the evening commute",
-      "Vehicle delivery from Menifee dealerships to buyers across Southern California",
-      "Moving families whose vehicles don't survive the relocation trip",
+    hook: "Menifee is a bedroom community — thousands of residents commute to San Diego, Orange County, and Los Angeles every day. When your car breaks down on the way home, you need a tow that can bring it the rest of the way, not just move it off the freeway.",
+    content: [
+      "The 215 and I-15 corridors are the most common long-distance routes we cover for Menifee residents, and the calls follow a predictable pattern: a commuter's car breaks down on the way home during afternoon rush hour — overheated, flat tire, or mechanical failure — and they need it brought the remaining twenty or thirty miles back to Menifee. The difference between a short tow from the side of the freeway to the next exit and a proper long-distance tow back to the driver's home neighborhood is significant in both cost and logistics. We offer both options and let the driver choose: we can drop the car at a shop near the freeway exit for a local repair, or we can flatbed it all the way home so they can deal with it from their own garage.",
+      "The 74 grade toward Lake Elsinore is another common source of long-distance tows for Menifee drivers, especially during summer evening commute hours. A driver leaves Orange County via the 74, climbs the Ortega grade, and their car — which has been running hot all day — finally overheats on the descent into the valley. They're stranded on a mountain road with fading daylight, their car won't restart, and they need both a tow and a ride home. We handle these calls regularly and our drivers carry basic diagnostic gear to confirm what went wrong, so the driver can make an informed decision about where to have the car towed for repairs.",
+      "Menifee is also a common pickup point for vehicle delivery to buyers and sellers across Southern California. With steady population growth comes a steady turnover of vehicles being bought, sold, and transported. A seller in Menifee finds a buyer in San Diego, a collector in Orange County purchases a car listed in Menifee, or an insurance company needs a vehicle moved from a Menifee address to a salvage yard in another city. These planned transports are coordinated around the driver's schedule and documented with before-and-after photos as part of our standard procedure.",
     ],
-    localAngle: "Menifee's growth means more commuters spread across more freeways. A breakdown on the 215 or I-15 can leave you an hour from home. We bring it back for you.",
-    neighborhoods: ["Sun City", "Menifee Lakes", "Newport Rd corridor"],
-    roads: ["Newport Rd", "I-215", "I-15", "CA-74", "Antelope Rd"],
+    localAngle: "Menifee's population is growing faster than its local job market, which means more residents commuting longer distances and more cars breaking down far from home. We've structured our pricing and response patterns around this reality, with dedicated commuter-hour coverage on the 215 and I-15 corridors.",
+    faqs: [
+      { q: "Can you tow my car from the 215 back to Menifee if it breaks down during my commute?", a: "Yes. Call us with your location and we'll send a flatbed from our Menifee-area driver. We can bring your car home or drop it at any shop you choose along the way." },
+      { q: "How much does a tow from the 74 grade cost for a Menifee resident?", a: "From the Ortega Highway section near Lake Elsinore to a Menifee address, expect approximately $200 to $350 for a standard passenger car. We'll confirm the price before the truck arrives." },
+    ],
   },
 
   "menifee:motorcycle-towing": {
-    hook: "Menifee's grid of wide boulevards and the proximity to the 74 mountain roads make it a natural base for riders. But the same construction boom that's building new homes also leaves debris that takes down bikes.",
-    commonScenarios: [
-      "Cruiser breakdowns on the long straight of Newport Rd between developments",
-      "Sportbike recoveries from the 74 approach to the Ortega Highway",
-      "Golf cart and neighborhood vehicle transport from Sun City and Menifee Lakes",
-      "Bike flats from construction screws and nails on recently paved roads",
+    hook: "Menifee's grid of wide boulevards and its proximity to the 74 mountain roads make it a natural base for riders. But the same construction boom that's building new homes also leaves debris on the roads that takes down bikes in seconds.",
+    content: [
+      "Construction debris flats are the single most common motorcycle breakdown we handle in Menifee, and they're almost entirely preventable — if the developers kept the roads clean. Screws, nails, and sharp metal from construction sites end up on Scott Road, Ethanac Road, and the other East Menifee streets that new residents use daily. A rider hits one of these at speed on a warm day when the tire is already soft, and the puncture causes a rapid deflation that's dangerous on a bike. We respond to these calls knowing the rider is usually frustrated and shaken — a flat on a motorcycle at speed is a genuinely scary experience, even if you keep the bike upright. We take the time to calm the rider down, inspect the tire, and either plug it on the spot or arrange a tow to a shop that can handle motorcycle tires.",
+      "The 74 approach from Menifee — Newport Road heading toward the lake and the Ortega Highway — is popular with riders heading for the mountain roads, but the conditions are treacherous. The road surface varies from freshly paved in the newer sections to old, cracked asphalt in the rural stretches, and sand and gravel accumulate at the edges where bikes naturally track through curves. Riders who push too hard on unfamiliar roads, or who hit a patch of gravel mid-corner, go down before they know what happened. We recover downed bikes from the Newport Road corridor regularly, and in every case the rider is our primary concern — we make sure they're medically clear before we touch the bike, and we handle the recovery with extra care to avoid further cosmetic damage.",
+      "Sun City and Menifee Lakes generate a unique category of motorcycle-adjacent calls: golf cart and neighborhood vehicle transport. These aren't motorcycles, but they require the same soft-strap, wheel-chock approach to avoid damage to their lightweight frames and plastic bodies. A golf cart that breaks down on the Menifee Lakes golf course path needs to get back to the owner's garage, and a neighborhood electric vehicle with a dead battery can't be towed with a standard wheel-lift without damaging the front end. We handle these with the same motorcycle rigging gear and the same care, because to the owner, their golf cart matters as much as a sportbike matters to a rider.",
     ],
-    localAngle: "Menifee's rapid development is great for the city but hard on tires. Construction debris — screws, nails, sharp metal — is everywhere on newer roads. Bikes are especially vulnerable.",
-    neighborhoods: ["Sun City", "Menifee Lakes", "Newport corridor", "East Menifee"],
-    roads: ["Newport Rd", "Sun City Blvd", "Menifee Lakes Dr", "Scott Rd", "Antelope Rd"],
+    localAngle: "Menifee's rapid construction is great for the city but hard on tires. Construction debris — screws, nails, sharp metal — is everywhere on newer roads, and bikes are especially vulnerable. A puncture that would be a slow leak in a car tire is an instant flat on a motorcycle at highway speed.",
+    faqs: [
+      { q: "Do you charge extra for motorcycle towing in Menifee?", a: "No. Same base rate as passenger cars. Soft straps, wheel chocks, and padded rails are standard on every truck." },
+      { q: "Can you tow a golf cart or neighborhood vehicle from Sun City?", a: "Yes. We use the same motorcycle rigging gear — soft straps and wheel chocks — which is ideal for golf carts and lightweight electric vehicles. No additional charge." },
+    ],
   },
 
   "menifee:heavy-duty-towing": {
-    hook: "Menifee's construction boom means heavy equipment is everywhere — excavators, dump trucks, concrete mixers. When a piece of commercial equipment goes down mid-project, every hour of downtime costs money.",
-    commonScenarios: [
-      "Dump truck and mixer breakdowns at active construction sites in East Menifee",
-      "Fleet vehicle recovery for delivery and service companies operating in the Menifee area",
-      "RV towing from storage lots and the Menifee Lakes campground area",
-      "Construction equipment transport between Menifee job sites",
+    hook: "Menifee's construction boom means heavy equipment is everywhere — excavators, dump trucks, concrete mixers moving between job sites on roads that weren't designed for them. When a piece of commercial equipment goes down mid-project, every hour of downtime costs money and every minute it blocks the road costs everyone else their patience.",
+    content: [
+      "The East Menifee development zones are the primary source of heavy-duty towing calls in the city. Scott Road, Ethanac Road, and the new arterial roads being built to service the growing housing developments see a constant flow of construction equipment — dump trucks hauling fill, concrete mixers delivering to foundations, and excavators moving between pads. When one of these breaks down on a road that's already narrow and unpaved at the edges, the entire site logistics chain grinds to a halt. The foreman needs that equipment moved now, not in two hours, and that means sending a heavy-duty rotator that can lift the disabled vehicle and clear the road without waiting for a second truck. Our heavy-duty partners respond to these calls with the urgency of a production stoppage, because for the contractor, that's exactly what it is.",
+      "RV and motorhome towing from Menifee's storage lots, the Sun City RV parking areas, and occasional campground breakdowns at Menifee Lakes keeps our heavy-duty operators busy year-round. RVs are heavier than they look, their chassis are less robust than a commercial truck's, and their owners are often not experienced with towing procedures. A broken-down RV that needs to go to a repair shop in Menifee or beyond requires careful handling: suspension components need to be inspected before towing, slide-outs need to be secured, and the weight distribution needs to be verified to avoid exceeding the tow rig's capacity. We handle these calls with a thorough pre-tow inspection and a clear explanation to the owner of every step we're taking.",
+      "Fleet vehicle recovery for Menifee's delivery companies, service contractors, and municipal vehicles generates consistent call volume throughout the year. A delivery van with a seized transmission on Newport Road during the holiday rush, a service truck with a dead alternator in a customer's driveway, or a city vehicle that broke down on a road maintenance route — each of these calls requires the same heavy-duty response but for different reasons. The delivery van needs the fastest possible recovery to minimize missed deliveries. The service truck needs to be transported to a shop that stocks the specific parts for a commercial fleet vehicle. The city vehicle needs to be handled with the paperwork and coordination that public agencies require. We adapt our response to the specific needs of each fleet operator.",
     ],
-    localAngle: "Menifee is the fastest-growing city in the valley at +14% since 2020. Every new development means construction equipment on the road. When a truck or excavator breaks down, we're the call that gets the project moving again.",
-    neighborhoods: ["East Menifee (development zones)", "Newport Rd commercial", "Scott Rd industrial"],
-    roads: ["Scott Rd", "Ethanac Rd", "Newport Rd", "Menifee Rd"],
+    localAngle: "Menifee is the fastest-growing city in the valley at 14% growth since 2020, and every new development means construction equipment on the road. When a dump truck or excavator breaks down mid-project, the clock is running on the entire site. Our heavy-duty operators treat these calls as production emergencies, not towing jobs.",
+    faqs: [
+      { q: "Do you offer fleet accounts for Menifee businesses?", a: "Yes. Fleet accounts include priority dispatch, consolidated monthly billing, and a dedicated dispatch contact for your company. Call us to set one up." },
+      { q: "Can you handle an RV recovery from a storage lot?", a: "Absolutely. We'll inspect the RV's suspension and secure all slide-outs and awnings before towing. Our flatbeds can handle any size RV, from a pop-up trailer to a 40-foot diesel pusher." },
+    ],
   },
 
   // ─── HOMELAND ────────────────────────────────────────────
 
-  "homeland:roadside-assistance": {
-    hook: "Homeland is small, rural, and easy to miss — but if your car breaks down on Warren Road or the 74 corridor, you notice. There's no gas station in Homeland. No repair shop. No tow company (except us). When you're stuck here, you're really stuck.",
-    commonScenarios: [
-      "Cars in the ditch on Warren Rd — the drainage ditches are deep and easy to miss at night",
-      "Overheating on the 74 mountain approach just outside Homeland during summer",
-      "Flat tires from rural debris on Leon Rd and Fredericks St",
-      "Dead batteries on unlit rural roads where drivers left lights on",
+  "homeland:emergency-towing": {
+    hook: "Homeland is small, rural, and easy to miss on a map — but if your car breaks down on Warren Road or the 74 corridor, you notice. There's no gas station in Homeland, no repair shop, and no other tow company. When you're stuck here, you're really stuck.",
+    content: [
+      "The 74 corridor through Homeland is the most dangerous stretch of road in our entire service area for a breakdown. The road is narrow, winding, and carries traffic at highway speeds through a rural section with no shoulders and no lighting. A disabled vehicle on the 74 near Homeland isn't an inconvenience — it's a collision waiting to happen. We've responded to calls where a car broke down on a curve and was nearly hit by an oncoming truck within minutes of stopping. These calls get our absolute highest priority dispatch because we know that every minute on the 74 is a minute the driver is in genuine danger. Our drivers know every turnout, every wide spot, and every driveway on this stretch, and they can position the recovery truck to shield the disabled vehicle from traffic while it's being loaded.",
+      "Warren Road through Homeland is a different kind of emergency — not the speed of the 74, but the particular danger of the deep drainage ditches that line both sides. These ditches are deceptively deep, often overgrown with weeds, and invisible at night. We get calls from drivers who pulled over to check a strange noise and accidentally dropped a wheel into a ditch that turned out to be three feet deep, leaving the car stuck at an angle with the frame resting on the edge. These recoveries require a winch and careful positioning to avoid dropping the car further into the ditch, and they're complicated by the narrow road width that leaves no room for a standard tow truck to position itself properly. Our heavy-duty rotator operators know how to handle ditch recoveries on narrow roads without blocking the entire lane.",
+      "Summer heat on the 74 approach to Homeland creates emergency conditions that drivers from the city don't anticipate. On a 105-degree day, a car that's been climbing the grade from the valley floor can overheat and lose power suddenly, leaving the driver coasting to a stop on a road with no shoulder, no shade, and no cell reception in several spots. The driver is then faced with a choice: stay with the car in dangerous heat and hope for help, or start walking toward the nearest house — which could be a mile away — and leave the car unattended on a road where it could be hit. We tell drivers to stay with the vehicle, turn on hazards, and call us. We can find you even without GPS coordinates if you can describe your location relative to the last landmark you passed.",
     ],
-    localAngle: "Homeland has one elementary school and nothing else. No services, no gas, no cell reception in some spots. A breakdown here is genuinely dangerous in summer heat. We prioritize Homeland calls because there's no backup.",
-    neighborhoods: ["Homeland Village", "74 Corridor", "Warren / Leon rural area"],
-    roads: ["Warren Rd", "Leon Rd", "Homeland Rd", "CA-74", "Fredericks St"],
+    localAngle: "Homeland has no services — no gas stations, no repair shops, no grocery stores, and no other towing companies. A breakdown here is genuinely dangerous in summer heat, especially on the 74 corridor where traffic speed, blind curves, and limited shoulders combine to create a high-risk situation that most drivers have never experienced before.",
     faqs: [
-      { q: "What if I break down on the 74 near Homeland at night?", a: "Call us immediately. The 74 has no lighting through this stretch and limited shoulders. Stay in your vehicle with hazards on, and we'll find you. Tell us the nearest cross street if you can see one." },
+      { q: "What if I break down on the 74 near Homeland with no cell service?", a: "If your call drops, try sending a text — texts can go through in areas where calls can't. If that doesn't work, stay with your vehicle, turn on hazards, and if you can safely do so, wave down another driver to call for you. We patrol the 74 corridor regularly and may find you even without a call." },
+      { q: "How is emergency towing different in Homeland compared to a city like Hemet?", a: "Response times are longer — 25 to 35 minutes instead of 15 to 20 — because the roads are more spread out and our closest driver may be coming from Hemet. But the stakes are higher: no shoulders, no lighting, no cell service in spots, and the nearest services are miles away. We prioritize Homeland emergency calls higher than any other type." },
+    ],
+  },
+
+  "homeland:roadside-assistance": {
+    hook: "Homeland is rural in a way that most drivers in the Inland Empire never experience. There are no gas stations, no repair shops, and no other tow companies within the community. When your car gives you trouble on Warren Road or the 74 corridor, you're on your own — unless you have our number saved.",
+    content: [
+      "Deep drainage ditches on Warren Road and Leon Road are the most distinctive roadside call we handle in Homeland. These ditches run along both sides of the road, hidden by tall grass and weeds, and they're easy to step into or drop a wheel into without realizing how deep they are. A driver who pulls over to check a strange noise — a loose belt, a low tire, a mysterious rattle — can accidentally put a wheel into a ditch that's three feet deep and suddenly have a much bigger problem than the noise they stopped for. We get these calls on a regular basis, and our drivers know exactly which sections of Warren Road have the deepest ditches and how to approach a wheel-extraction safely without dropping the vehicle further into the trench.",
+      "Rural debris flats are the second most common roadside call in Homeland. Leon Road, Fredericks Street, and the unpaved sections of Homeland Road accumulate agricultural debris — fencing staples, hay baling wire, and the occasional horseshoe — that puncture tires on cars and trucks that use these roads daily. Unlike a city flat where you can limp to the nearest tire shop, a flat on a rural road in Homeland means you're either fixing it yourself or waiting for help. We carry multiple tire plug kits and a universal spare on every truck that covers the Homeland area, and we can have most flats repaired or replaced within thirty minutes of arrival.",
+      "Overheating on the 74 corridor in Homeland follows a different pattern than the mountain grade overheating we see on the Hemet side. In Homeland, the road is flatter but the ambient temperature is often higher because the terrain is open and exposed, and cars that have been climbing from the valley are already hot when they hit the Homeland stretch. A car that was marginal when it left Hemet can finally give up in the Homeland section, and the driver is now stranded in a location where there's no shade, no water, and no cell service. We carry extra coolant and a portable shade canopy on our Homeland-response trucks, because sometimes the most important thing we can do is get the driver out of the sun while we work on their car.",
+    ],
+    localAngle: "Homeland has zero services — no gas stations, no repair shops, no auto parts stores, nothing. A roadside breakdown here isn't an inconvenience, it's a situation. When our truck arrives in Homeland, we arrive not just with tools but with water, shade, and the understanding that this driver had no backup plan.",
+    faqs: [
+      { q: "What if I drop a wheel into a ditch on Warren Road?", a: "Don't try to drive out — you'll likely drop in deeper. Call us and we'll winch you out carefully. Tell us the nearest cross street so we can find you faster." },
+      { q: "Is there cell service on Leon Road or Fredericks Street?", a: "It varies. Parts of Leon Road have reception, Fredericks is spotty, and the sections near the Homeland border are dead zones. If you're in a dead zone, try to make it to Warren Road or the 74 and call from there." },
     ],
   },
 
   "homeland:long-distance-towing": {
-    hook: "Homeland sits on the 74 between Hemet and the mountain pass — a rural pinch point where cars heading to the coast or the valley often break down far from either destination.",
-    commonScenarios: [
-      "Cars that die on the 74 grade and need to be towed to Hemet or Lake Elsinore",
-      "Breakdowns on the way to or from the Ortega Highway that strand drivers in the rural stretch",
-      "Vehicle transport from Homeland to repair shops in Hemet or Perris",
-      "Recreational vehicle towing from Diamond Valley Lake access points near Homeland",
+    hook: "Homeland sits on the 74 between Hemet and the mountain pass — a rural pinch point where cars heading to the coast or the valley often break down far from either destination. When you're stuck in the middle, you need a tow that can handle the distance and the terrain.",
+    content: [
+      "The 74 corridor through Homeland is the dividing line between the valley and the mountains, and it's where cars that aren't quite healthy enough for a mountain crossing finally fail. A driver from Hemet heads toward Orange County for a weekend trip, their car starts running hot on the climb, and by the time they reach the Homeland stretch they're stuck with a steaming engine and no way forward or back. These are the most common long-distance tows we handle from Homeland — taking a car that failed on the approach back to a shop in Hemet or forward to a shop in Lake Elsinore. The driver's decision about which direction to go depends on where they live and which shop they trust, and we let them make that choice after we've given them our assessment of what went wrong.",
+      "Diamond Valley Lake access from the Homeland side — primarily via Warren Road and the 74 connection — generates recreational long-distance tows during summer and holiday weekends. A family from San Diego comes up to spend the day at the lake, and their minivan or SUV breaks down on the return trip through Homeland. They don't know the area, they don't know any local shops, and they're facing a hotel stay or a rental car if they can't get their vehicle home. We handle these tows with an understanding that the driver is likely stressed, far from home, and on a schedule. We document everything for their insurance, provide a ride to the nearest rental car location if needed, and deliver their vehicle to a shop in their home city rather than leaving it at an unfamiliar garage near the breakdown site.",
+      "Private-party vehicle transport from Homeland follows the same routes but with less urgency. Someone selling a vehicle in rural Homeland needs to get it to a buyer in San Diego or Orange County, and the logistics of arranging a tow from a location that most people have never heard of can be challenging. We know Homeland, we know the unpaved roads that can swallow a low-boy trailer, and we know which driveways can accommodate a flatbed for loading. We handle these transports with the same equipment and documentation as an emergency tow but at a lower price point, because the driver has the flexibility to schedule the pickup for when we're already in the area.",
     ],
-    localAngle: "Homeland's location on the 74 means any long-distance trip involves a mountain pass. Cars that are marginal in the valley overheat on the way up. Cars that break down on the coast have to come back through.",
-    neighborhoods: ["74 Corridor", "Homeland Village"],
-    roads: ["CA-74", "Warren Rd", "Leon Rd"],
+    localAngle: "Homeland's location on the 74 means every long-distance trip involves a mountain pass in one direction and a rural valley stretch in the other. Cars that are marginal in the valley overheat on the way up, and cars that broke down on the coast have to come back through the same pass. We structure our routing to minimize backhaul mileage for the customer.",
+    faqs: [
+      { q: "Can you tow my car from Homeland to a shop in Hemet if it broke down on the 74?", a: "Yes. We'll assess the vehicle at the breakdown site, confirm whether it's safe to tow, and deliver it to any shop in Hemet or the surrounding area. Flatbed only, full documentation for your insurance." },
+      { q: "How much does a long-distance tow cost from Homeland?", a: "To Hemet or Lake Elsinore, approximately $150 to $250. To San Diego or Orange County, $350 to $500 depending on the exact route. We'll confirm the price before we start loading." },
+    ],
   },
 
   "homeland:motorcycle-towing": {
-    hook: "The 74 through Homeland is the gateway to some of the best riding in Southern California — but it's also a dead zone for bike services. If your bike goes down in the Homeland stretch, the next help is 15 miles in either direction.",
-    commonScenarios: [
-      "Sportbike breakdowns on the 74 twisties approaching the mountain pass",
-      "Cruiser stalls on the long rural stretches with no shoulder to pull off safely",
-      "Dirt bike recoveries from the trails branching off Leon Rd and Warren Rd",
-      "Electrical failures on bikes after riding through the evening heat",
+    hook: "The 74 through Homeland is the gateway to some of the best riding in Southern California — and also a dead zone for bike services. If your bike goes down in the Homeland stretch, the next help is fifteen miles in either direction, and the conditions on the road make every minute feel like an hour.",
+    content: [
+      "The 74 twisties approaching the Homeland section from the east are ridden by sportbike enthusiasts who come from across the IE to test their skills on the curves. But these roads are technical and unforgiving, with blind corners, elevation changes, and sections where gravel washes across the pavement from the unpaved side roads. A rider who enters a corner too hot and finds gravel mid-turn has seconds to make a decision — crash into the hillside, low-side into the road, or straighten up and hope they can brake in time. We recover crashed sportbikes from this section of the 74 on a regular basis, and in every case our primary concern is the rider's condition. We don't move the bike until medical personnel have cleared the rider, and we document the scene thoroughly for insurance purposes before we touch anything.",
+      "The long rural stretches of the 74 through Homeland are popular with cruiser and touring riders who enjoy the open road and the scenery. The problem here isn't the curves — it's the isolation. A cruiser that develops an electrical problem on a hot Sunday afternoon, miles from any town, leaves the rider stranded on a road where the next driver might not come along for fifteen minutes. The lack of cell reception in spots means the rider may not even be able to call for help. Our drivers patrol the 74 corridor on high-traffic riding days, and we've found riders who had been stranded for over an hour without a passing car stopping to help. We carry a portable shade canopy, water, and a motorcycle-specific diagnostic kit on every Homeland-response truck because we know a rider in this area might need more than just a tow.",
+      "Dirt bike recoveries from the trails branching off Leon Road and Warren Road add a different dimension to our Homeland motorcycle service. The trail network east of Homeland is popular with off-road riders, but the access roads are rough and easy to get stuck on. A rider who breaks down on the trail and needs to be towed back to their truck at the trailhead presents a logistical challenge — our standard tow truck can't go off-road, and the rider may be miles into the backcountry. We coordinate these recoveries by meeting the rider at the nearest accessible point and sending a driver on foot or with an ATV if necessary to reach the stranded bike. It's not a service we advertise, but for local riders who know the trails, it's a lifeline.",
     ],
-    localAngle: "The 74 corridor through Homeland has patches with zero cell reception and no street lighting. If your bike dies in a dead zone, you're walking to the nearest house — unless you have a way to call us before you lose signal.",
-    neighborhoods: ["74 Corridor", "Homeland Village", "Warren Road area"],
-    roads: ["CA-74", "Leon Rd", "Warren Rd", "Fredericks St"],
+    localAngle: "The 74 corridor through Homeland has patches with zero cell reception and no street lighting over a stretch that takes ten minutes to drive. If your bike dies in a dead zone, you're walking to the nearest house — unless our patrol driver finds you first. We run regular patrols on the 74 on weekends specifically to catch stranded riders before they become emergencies.",
+    faqs: [
+      { q: "What if my bike goes down on the 74 and I'm injured?", a: "Our first priority is your safety. We'll call 911, stay with you until medical help arrives, and coordinate with the responding officers to recover your bike once the scene is secure. Your bike goes to a shop of your choice, not an impound lot." },
+      { q: "Can you recover a dirt bike from the trails off Leon Road?", a: "Yes, but you'll need to meet us at the nearest accessible road point so we can guide you in. If you're deep in the backcountry and can't get the bike out, we'll coordinate a side-by-side or ATV recovery to bring it to our truck." },
+    ],
   },
 
   "homeland:heavy-duty-towing": {
-    hook: "Homeland may be small, but it sits on a route that sees agricultural equipment, horse trailers, and commercial delivery trucks passing through daily. When a heavy vehicle breaks down on these narrow rural roads, it blocks the entire corridor.",
-    commonScenarios: [
-      "Agricultural equipment breakdowns on Leon Rd during farming season",
-      "Horse trailer and livestock transport recovery on the 74",
-      "Delivery truck recoveries on Warren Rd and Homeland Rd",
-      "Construction equipment transport for rural property development",
+    hook: "Homeland may be small, but it sits on a route that sees agricultural equipment, horse trailers, and commercial delivery trucks passing through daily. When a heavy vehicle breaks down on these narrow rural roads, it doesn't just block traffic — it blocks the entire corridor, and there's no alternate route for miles.",
+    content: [
+      "Agricultural equipment breakdowns on Leon Road and the rural stretches of Warren Road are seasonal but severely disruptive when they happen. A tractor or combine that fails during harvest blocks access to multiple properties on roads that are barely wide enough for two cars, let alone a piece of farm equipment fifteen feet wide. These aren't straightforward recoveries — the equipment is heavy, it's often in an awkward position, and the road surface may not support a heavy rotator without additional stabilization. We handle these calls with agricultural-sector operators who understand the equipment, know how to secure it for transport without causing mechanical damage, and have the low-boy trailers needed to move a combine or a full-size tractor to a repair facility.",
+      "Horse trailer and livestock transport recoveries on the 74 corridor near Homeland are the highest-stakes heavy-duty calls we handle. A trailer carrying horses that breaks down on a hot day on the 74 is an emergency for the animals, not just the driver. Horses can't regulate their body temperature as effectively as humans, and a stopped trailer in summer heat with limited ventilation can become dangerous within minutes. Our heavy-duty operators know how to position the recovery vehicle to maintain airflow through the trailer, how to secure a loaded trailer for towing without shifting the animals, and when to recommend unloading the horses into a pasture or stable before attempting the recovery. We coordinate with local equestrian contacts who can provide temporary holding if needed, and we never rush a livestock recovery at the expense of the animals' safety.",
+      "Delivery truck recoveries on Warren Road and Homeland Road — the main commercial routes through the community — happen throughout the year as trucks delivering to the surrounding rural properties break down on roads that weren't designed for commercial traffic. A delivery truck with a mechanical failure on Warren Road can block the only access to several homes and farms, and the tight road width means cars can't get around even if they wanted to. Our heavy-duty operators approach these calls with a traffic management plan already in mind: where to position the recovery truck to minimize road blockage, how to set up warning signs on both approaches, and how to coordinate with any affected property owners who need to get through during the recovery. We treat every rural road blockage as a community priority, because blocking Homeland's roads affects everyone who lives there in a way that blocking a city street doesn't.",
     ],
-    localAngle: "Homeland's rural roads are narrow, unlit, and bordered by deep drainage ditches. A heavy vehicle breakdown here doesn't just block traffic — it can damage the equipment if it slides into a ditch. We bring the right recovery gear.",
-    neighborhoods: ["Homeland Village", "74 Corridor", "Warren / Leon area"],
-    roads: ["CA-74", "Warren Rd", "Leon Rd", "Homeland Rd", "Fredericks St"],
+    localAngle: "Homeland's rural roads are narrow, unlit, and bordered by deep drainage ditches. A heavy vehicle breakdown here doesn't just block traffic — it can damage the equipment if it slides into a ditch during the recovery, and the nearest heavy-duty repair facility is at least twenty minutes away. Our operators bring extra rigging and stabilization gear specifically for these road conditions.",
+    faqs: [
+      { q: "Can you recover a tractor from a narrow rural road in Homeland?", a: "Yes. Our heavy-duty operators have experience with agricultural equipment recovery on narrow roads. We'll assess the site, determine the safest approach, and recover the equipment without blocking the road longer than necessary." },
+      { q: "What if I have a horse trailer breakdown on the 74 near Homeland?", a: "Call us immediately and let us know you have livestock on board. We'll prioritize the call and dispatch an operator with livestock recovery experience. If conditions are unsafe for the animals, we can arrange temporary holding while the trailer is repaired." },
+    ],
   },
 };
