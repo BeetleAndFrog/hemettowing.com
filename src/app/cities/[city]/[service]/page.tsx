@@ -8,6 +8,7 @@ import { cities, findCity, cityLabel, services } from "@/lib/cities";
 import { phone } from "@/lib/constants";
 import { ServiceSchema, BreadcrumbListSchema } from "@/lib/schema";
 import { cityServiceCopy, type CityServiceKey } from "@/lib/city-service-copy";
+import { cityHeroes } from "@/lib/city-heroes";
 
 export async function generateStaticParams() {
   const params: { city: string; service: string }[] = [];
@@ -106,14 +107,45 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         { name: s.name, href: `/cities/${city}/${service}` },
       ])} />
       <Header />
-      <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href={`/cities/${city}`} className="text-emergency text-sm mb-4 inline-block hover:underline">
-          &larr; {s.name} in {c.name}
-        </Link>
-
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">
-          {s.name} in {c.name}, CA
-        </h1>
+      <main id="main-content">
+        {(() => {
+          const hero = cityHeroes.find(h => h.filename === `${city}.png`);
+          if (hero) {
+            return (
+              <section className="relative text-white py-16 md:py-24 overflow-hidden">
+                <div className="absolute inset-0">
+                  <img src={`/images/${hero.filename}`} alt="" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/85 to-gray-900/70" />
+                </div>
+                <div className="max-w-6xl mx-auto px-4 relative">
+                  <Link href={`/cities/${city}`} className="text-emergency-light text-sm mb-4 inline-block hover:underline opacity-80 hover:opacity-100 transition">
+                    &larr; {s.name} in {c.name}
+                  </Link>
+                  <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-3">
+                    {s.name} in {c.name}, CA
+                  </h1>
+                  <p className="text-lg text-gray-300 max-w-2xl">24/7 {s.name.toLowerCase()} in {c.name}. Call us — we&apos;re local.</p>
+                  <div className="mt-6">
+                    <Phone variant="hero" />
+                  </div>
+                </div>
+              </section>
+            );
+          }
+          return (
+            <div className="pt-4">
+              <div className="max-w-4xl mx-auto px-4">
+                <Link href={`/cities/${city}`} className="text-emergency text-sm mb-4 inline-block hover:underline">
+                  &larr; {s.name} in {c.name}
+                </Link>
+                <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                  {s.name} in {c.name}, CA
+                </h1>
+              </div>
+            </div>
+          );
+        })()}
+        <div className="max-w-4xl mx-auto px-4 pb-12">
 
         {cityCopy ? (
           <>
@@ -193,6 +225,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
           </h2>
           <p className="text-gray-600 mb-6">Don&apos;t wait. We&apos;re on the way.</p>
           <Phone variant="hero" />
+        </div>
         </div>
       </main>
       <Footer />
