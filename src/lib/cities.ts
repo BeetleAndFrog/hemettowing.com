@@ -88,6 +88,81 @@ export const cities: CityInfo[] = [
       { name: "Warren / Leon rural area", roads: "Leon Rd, Fredericks St, Warren Rd", towing_note: "Unlit roads at night. Cows and wildlife crossings add to the risk. Flat tires from rural debris are common." },
     ],
   },
+  {
+    name: "East Hemet",
+    slug: "east-hemet",
+    county: "Riverside",
+    population: "—",
+    description:
+      "East Hemet covers the warmer side of town, stretching from Florida Avenue and Stetson Avenue out toward Warren Road. This area has the highest concentration of heat-related breakdowns in the San Jacinto Valley, and we know every block of it.",
+    landmarks: ["Hemet Valley Mall", "Stetson Avenue corridor", "Warren Road"],
+    keywords: ["East Hemet towing", "towing East Hemet", "East Hemet roadside"],
+    neighborhoods: [
+      { name: "Florida Ave / Stetson Ave area", roads: "Florida Ave, Stetson Ave", towing_note: "Busiest commercial intersection in East Hemet. Heat-related battery and cooling failures peak here in summer." },
+      { name: "Warren Road corridor", roads: "Warren Rd, Chambers Ave", towing_note: "Long rural stretch with limited services. A breakdown here means waiting — we aim to change that." },
+      { name: "Eastside residential", roads: "Lillian St, Johnston Ave, Menlo Ave", towing_note: "Quiet residential streets. Seniors living alone account for most lockout and jump-start calls." },
+    ],
+  },
+  {
+    name: "Valle Vista",
+    slug: "valle-vista",
+    county: "Riverside",
+    population: "—",
+    description:
+      "Valle Vista sits on the western edge of Hemet, a quieter residential pocket along Florida Avenue with citrus groves, older homes, and a large senior population. Breakdowns here are more about daily life than highway emergencies.",
+    landmarks: ["Valle Vista Shopping Center", "Stanford Street", "Diamond Valley Lake approach"],
+    keywords: ["Valle Vista towing", "towing Valle Vista", "Valle Vista roadside"],
+    neighborhoods: [
+      { name: "Stanford Street area", roads: "Stanford St, California Ave", towing_note: "Dense residential with narrow streets. Seniors lock themselves out or need jump starts more than any other group." },
+      { name: "Florida Avenue (Valle Vista stretch)", roads: "Florida Ave", towing_note: "Long commercial strip with stop-and-go traffic. Frequent fender benders and overheating cars." },
+      { name: "West Hemet gateway", roads: "Warren Rd, Sageland Dr", towing_note: "Transition zone between Hemet's suburban grid and the rural roads toward the lake." },
+    ],
+  },
+  {
+    name: "Sage",
+    slug: "sage",
+    county: "Riverside",
+    population: "—",
+    description:
+      "Sage is the rural gateway to Diamond Valley Lake, sitting along Sage Road and Newport Road between Hemet and Winchester. It's a quiet area most of the year, but during fishing and hiking season the traffic spikes — and so do breakdowns.",
+    landmarks: ["Diamond Valley Lake", "Sage Road", "Newport Road"],
+    keywords: ["Sage towing", "towing Sage CA", "Sage roadside assistance"],
+    neighborhoods: [
+      { name: "Diamond Valley Lake approach", roads: "Sage Rd, Newport Rd", towing_note: "Steep, winding road to the lake. Brake overheating and cooling failures spike during summer recreation season." },
+      { name: "Sage rural corridor", roads: "Sage Rd, Simpson Rd", towing_note: "Unlit rural roads with long stretches between services. Wildlife crossings add risk at dawn and dusk." },
+      { name: "Newport Road connector", roads: "Newport Rd, Domenigoni Pkwy", towing_note: "Major connector between Hemet and Winchester. Construction traffic from new developments causes debris-related tire damage." },
+    ],
+  },
+  {
+    name: "Idyllwild",
+    slug: "idyllwild",
+    county: "Riverside",
+    population: "—",
+    description:
+      "Idyllwild is a mountain community at 5,400 feet in the San Jacinto Mountains. Our coverage here is limited — we can respond to most breakdowns but the mountain roads mean longer response times. For serious accidents, we coordinate with mountain-based tow operators.",
+    landmarks: ["Idyllwild Village", "Mount San Jacinto State Park", "Humber Park"],
+    keywords: ["Idyllwild towing", "towing Idyllwild", "Idyllwild roadside"],
+    neighborhoods: [
+      { name: "Idyllwild Village", roads: "CA-243, N Circle Dr, Village Center Dr", towing_note: "Tight village streets with limited parking. A breakdown in town blocks traffic for blocks." },
+      { name: "CA-243 corridor", roads: "CA-243", towing_note: "Mountain highway with steep grades and tight curves. Brake failures and overheated engines are common." },
+      { name: "Strawberry Valley / Fern Valley", roads: "CA-243, Fern Valley Rd", towing_note: "Residential areas off the main highway. Remote — our response times are longer here due to winding roads." },
+    ],
+  },
+  {
+    name: "Aguanga",
+    slug: "aguanga",
+    county: "Riverside",
+    population: "—",
+    description:
+      "Aguanga is a remote rural community along the 79 corridor between Temecula and Anza. Our coverage here is limited — we can reach Aguanga for most breakdowns but response times are longer due to the distance and winding mountain roads.",
+    landmarks: ["Aguanga General Store", "CA-79", "Vail Lake"],
+    keywords: ["Aguanga towing", "towing Aguanga", "Aguanga roadside"],
+    neighborhoods: [
+      { name: "79 Corridor (Aguanga stretch)", roads: "CA-79, Aguanga Rd", towing_note: "Remote rural highway with long gaps between services. Cell coverage drops in spots. Flat tires and overheating dominate." },
+      { name: "Vail Lake area", roads: "Vail Lake Rd, CA-79", towing_note: "Recreation area access road. Boats and trailers breakdown here more than passenger cars." },
+      { name: "Wilson Valley / Rangeland", roads: "Wilson Valley Rd, Cahuilla Rd", towing_note: "Deep rural. Unpaved roads, cattle crossings, and extreme isolation. Recovery here requires precise location coordination." },
+    ],
+  },
 ];
 
 export const services = [

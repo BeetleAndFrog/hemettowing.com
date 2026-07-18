@@ -17,6 +17,9 @@ const citySlugs: Record<string, string> = {
   "Winchester": "/cities/winchester",
   "Menifee": "/cities/menifee",
   "Homeland": "/cities/homeland",
+  "East Hemet": "/cities/east-hemet",
+  "Valle Vista": "/cities/valle-vista",
+  "Sage": "/cities/sage",
 };
 const services = [
   {

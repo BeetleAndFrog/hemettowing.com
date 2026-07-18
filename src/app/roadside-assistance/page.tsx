@@ -25,10 +25,23 @@ export default function RoadsideAssistancePage() {
         { name: "Roadside Assistance", href: "/roadside-assistance" },
       ])} />
       <Header />
-      <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href="/" className="text-emergency text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">Roadside Assistance in Hemet, CA</h1>
-        <p className="text-gray-600 text-lg mb-8">Breakdowns happen when you least expect them — a flat tire on your way to work, a dead battery in the grocery store parking lot, or a lockout after a long day. We handle all of it, fast.</p>
+      <main id="main-content">
+        <section className="relative text-white py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src="/images/roadside-jumpstart.png" alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/85 to-gray-900/70" />
+          </div>
+          <div className="max-w-6xl mx-auto px-4 relative">
+            <Link href="/" className="text-emergency-light text-sm mb-4 inline-block hover:underline opacity-80 hover:opacity-100 transition">&larr; Back to Home</Link>
+            <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-3">Roadside Assistance in Hemet, CA</h1>
+            <p className="text-lg text-gray-300 max-w-2xl">Flat tires, dead batteries, lockouts, fuel delivery — we handle it all, wherever you are.</p>
+            <div className="mt-6">
+              <Phone variant="hero" />
+            </div>
+          </div>
+        </section>
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <p className="text-gray-600 text-lg mb-8">Breakdowns happen when you least expect them — a flat tire on your way to work, a dead battery in the grocery store parking lot, or a lockout after a long day. We handle all of it, fast.</p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div>
@@ -127,6 +140,7 @@ export default function RoadsideAssistancePage() {
           <p className="text-gray-400 text-sm mb-6">We&apos;ll get you back on the road fast.</p>
           <Phone variant="hero" />
         </section>
+        </div>
       </main>
       <Footer />
     </>

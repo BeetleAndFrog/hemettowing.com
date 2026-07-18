@@ -20,9 +20,22 @@ export default function ContactPage() {
         { name: "Contact Us", href: "/contact" },
       ])} />
       <Header />
-      <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href="/" className="text-emergency text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h1>
+      <main id="main-content">
+        <section className="relative text-white py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src="/images/customer-handoff.png" alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/85 to-gray-900/70" />
+          </div>
+          <div className="max-w-6xl mx-auto px-4 relative">
+            <Link href="/" className="text-emergency-light text-sm mb-4 inline-block hover:underline opacity-80 hover:opacity-100 transition">&larr; Back to Home</Link>
+            <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-3">Contact Us</h1>
+            <p className="text-lg text-gray-300 max-w-2xl">We&apos;re here to help. Call for emergencies, use the form for quotes.</p>
+            <div className="mt-6">
+              <Phone variant="hero" />
+            </div>
+          </div>
+        </section>
+        <div className="max-w-4xl mx-auto px-4 py-12">
         <p className="text-gray-600 text-lg mb-8">For emergencies, always call. For quotes and non-urgent inquiries, use the form below. Either way, we&apos;re here to help.</p>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -63,6 +76,7 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+        </div>
       </main>
       <Footer />
     </>

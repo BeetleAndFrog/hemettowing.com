@@ -12,19 +12,32 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://hemettowing.com/service-area" },
 };
 
-const extraAreas = ["East Hemet", "Valle Vista", "Sage", "Idyllwild (limited)", "Aguanga (limited)"];
+const limitedAreas = ["idyllwild", "aguanga"];
 
 export default function ServiceAreaPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href="/" className="text-emergency text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">Service Area</h1>
-        <p className="text-gray-600 text-lg mb-8">We provide towing and roadside assistance across the entire San Jacinto Valley and surrounding areas. If you&apos;re stuck within our coverage zone, we&apos;re on the way.</p>
+      <main id="main-content">
+        <section className="relative text-white py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src="/images/service-area-hemet.png" alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/85 to-gray-900/70" />
+          </div>
+          <div className="max-w-6xl mx-auto px-4 relative">
+            <Link href="/" className="text-emergency-light text-sm mb-4 inline-block hover:underline opacity-80 hover:opacity-100 transition">&larr; Back to Home</Link>
+            <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-3">Service Area</h1>
+            <p className="text-lg text-gray-300 max-w-2xl">We cover Hemet and all surrounding areas — if you&apos;re here, we&apos;ll get to you.</p>
+            <div className="mt-6">
+              <Phone variant="hero" />
+            </div>
+          </div>
+        </section>
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <p className="text-gray-600 text-lg mb-8">We provide towing and roadside assistance across the entire San Jacinto Valley and surrounding areas. If you&apos;re stuck within our coverage zone, we&apos;re on the way.</p>
 
         <section className="mb-12">
-          <h2 className="text-xl font-bold mb-4">Major Service Areas</h2>
+          <h2 className="text-xl font-bold mb-4">All Service Areas</h2>
           <div className="grid sm:grid-cols-2 gap-4 mb-8">
             {cities.map((area) => (
               <Link
@@ -32,18 +45,11 @@ export default function ServiceAreaPage() {
                 href={`/cities/${area.slug}`}
                 className="bg-gray-50 px-5 py-4 rounded-lg border border-gray-100 hover:border-emergency/30 hover:bg-white transition group"
               >
-                <span className="font-medium group-hover:text-emergency transition">{area.name}</span>
+                <span className="font-medium group-hover:text-emergency transition">
+                  {area.name}{limitedAreas.includes(area.slug) ? " (limited)" : ""}
+                </span>
                 <span className="text-xs text-gray-400 ml-2">View services &rarr;</span>
               </Link>
-            ))}
-          </div>
-
-          <h2 className="text-xl font-bold mb-4">Also Serving</h2>
-          <div className="grid sm:grid-cols-2 gap-4 mb-8">
-            {extraAreas.map((area) => (
-              <div key={area} className="bg-gray-50 px-5 py-4 rounded-lg border border-gray-100">
-                <span className="font-medium">{area}</span>
-              </div>
             ))}
           </div>
         </section>
@@ -94,6 +100,7 @@ export default function ServiceAreaPage() {
           <h2 className="text-2xl font-bold mb-3">Not Sure If We Cover Your Location?</h2>
           <p className="text-gray-600 mb-6">Give us a call. If you&apos;re within range, we&apos;ll get someone to you.</p>
           <Phone variant="hero" />
+        </div>
         </div>
       </main>
       <Footer />

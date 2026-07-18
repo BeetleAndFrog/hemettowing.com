@@ -19,9 +19,22 @@ export default function AboutPage() {
         { name: "About Us", href: "/about" },
       ])} />
       <Header />
-      <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href="/" className="text-emergency text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">About Hemet Towing</h1>
+      <main id="main-content">
+        <section className="relative text-white py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src="/images/about-driver-peterbilt.png" alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/85 to-gray-900/70" />
+          </div>
+          <div className="max-w-6xl mx-auto px-4 relative">
+            <Link href="/" className="text-emergency-light text-sm mb-4 inline-block hover:underline opacity-80 hover:opacity-100 transition">&larr; Back to Home</Link>
+            <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-3">About Hemet Towing</h1>
+            <p className="text-lg text-gray-300 max-w-2xl">Locally owned and operated. Licensed, bonded, and built for the San Jacinto Valley.</p>
+            <div className="mt-6">
+              <Phone variant="hero" />
+            </div>
+          </div>
+        </section>
+        <div className="max-w-4xl mx-auto px-4 py-12">
 
         <div className="prose prose-gray max-w-none">
           <p className="text-lg leading-relaxed">
@@ -50,6 +63,7 @@ export default function AboutPage() {
         <div className="bg-gray-50 p-8 rounded-xl text-center mt-12">
           <h2 className="text-2xl font-bold mb-3">Need a Tow?</h2>
           <Phone variant="hero" />
+        </div>
         </div>
       </main>
       <Footer />

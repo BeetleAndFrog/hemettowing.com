@@ -25,10 +25,23 @@ export default function MotorcyclePage() {
         { name: "Motorcycle Towing", href: "/motorcycle-towing" },
       ])} />
       <Header />
-      <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href="/" className="text-emergency text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
-        <h1 className="text-3xl font-bold mb-4">Motorcycle Towing in Hemet, CA</h1>
-        <p className="text-gray-600 text-lg mb-8">Your bike is more than a vehicle — it's an investment. Our specialized motorcycle towing ensures safe transport every time.</p>
+      <main id="main-content">
+        <section className="relative text-white py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src="/images/motorcycle-securement.png" alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/85 to-gray-900/70" />
+          </div>
+          <div className="max-w-6xl mx-auto px-4 relative">
+            <Link href="/" className="text-emergency-light text-sm mb-4 inline-block hover:underline opacity-80 hover:opacity-100 transition">&larr; Back to Home</Link>
+            <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-3">Motorcycle Towing in Hemet, CA</h1>
+            <p className="text-lg text-gray-300 max-w-2xl">Specialized motorcycle towing with proper straps and trailers. Your bike stays safe.</p>
+            <div className="mt-6">
+              <Phone variant="hero" />
+            </div>
+          </div>
+        </section>
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <p className="text-gray-600 text-lg mb-8">Your bike is more than a vehicle — it's an investment. Our specialized motorcycle towing ensures safe transport every time.</p>
         <ul className="space-y-3 text-gray-600 mb-8">
           <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Soft tie-down straps — no damage to handlebars or paint</li>
           <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Wheel chocks for secure positioning</li>
@@ -104,6 +117,7 @@ export default function MotorcyclePage() {
           <h2 className="text-2xl font-bold mb-3">Bike Down? We&apos;ll Get It.</h2>
           <p className="text-gray-600 mb-6">Call us and we&apos;ll send a truck with the right equipment for your bike.</p>
           <Phone variant="hero" />
+        </div>
         </div>
       </main>
       <Footer />

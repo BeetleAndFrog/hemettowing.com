@@ -25,10 +25,23 @@ export default function LongDistancePage() {
         { name: "Long Distance Towing", href: "/long-distance-towing" },
       ])} />
       <Header />
-      <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href="/" className="text-emergency text-sm mb-4 inline-block hover:underline">&larr; Back to Home</Link>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">Long Distance Towing</h1>
-        <p className="text-gray-600 text-lg mb-8">Need your vehicle moved from Hemet to another city — or just across town? Our flatbed trucks handle it all, with safe and reliable transport for any distance.</p>
+      <main id="main-content">
+        <section className="relative text-white py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src="/images/flatbed-securement-detail.png" alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/85 to-gray-900/70" />
+          </div>
+          <div className="max-w-6xl mx-auto px-4 relative">
+            <Link href="/" className="text-emergency-light text-sm mb-4 inline-block hover:underline opacity-80 hover:opacity-100 transition">&larr; Back to Home</Link>
+            <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-3">Long Distance Towing</h1>
+            <p className="text-lg text-gray-300 max-w-2xl">Need a tow across town or across the state? Our flatbed trucks handle any distance.</p>
+            <div className="mt-6">
+              <Phone variant="hero" />
+            </div>
+          </div>
+        </section>
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <p className="text-gray-600 text-lg mb-8">Need your vehicle moved from Hemet to another city — or just across town? Our flatbed trucks handle it all, with safe and reliable transport for any distance.</p>
         <ul className="space-y-3 text-gray-600 mb-8">
           <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Towing to repair shops anywhere in the IE</li>
           <li className="flex gap-2"><span className="text-emergency font-bold">•</span> Cross-city transport (Hemet to San Diego, LA, OC)</li>
@@ -113,6 +126,7 @@ export default function LongDistancePage() {
           <h2 className="text-2xl font-bold mb-3">Need a Long-Distance Quote?</h2>
           <p className="text-gray-600 mb-6">Call us for a free estimate based on your exact location and destination.</p>
           <Phone variant="hero" />
+        </div>
         </div>
       </main>
       <Footer />
