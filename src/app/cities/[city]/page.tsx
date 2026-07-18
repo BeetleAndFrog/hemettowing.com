@@ -9,6 +9,7 @@ import type { ReactNode } from "react";
 import { cities, findCity, cityLabel, services } from "@/lib/cities";
 import { phone } from "@/lib/constants";
 import { BreadcrumbListSchema } from "@/lib/schema";
+import { cityHeroes } from "@/lib/city-heroes";
 
 const icons: Record<string, ReactNode> = {
   truck: (
@@ -70,6 +71,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
     );
   }
 
+  const hero = cityHeroes.find(h => h.filename === `${city}.png`);
   const otherCities = cities.filter((x) => x.slug !== city);
 
   return (
@@ -79,148 +81,172 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         { name: `${c.name}, CA`, href: `/cities/${city}` },
       ])} />
       <Header />
-      <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
-        <Link href="/service-area" className="text-emergency text-sm mb-4 inline-block hover:underline">
-          &larr; Service Area
-        </Link>
-
-        <h1 className="text-3xl md:text-4xl font-bold mb-3">
-          Towing in {c.name}, CA
-        </h1>
-        <p className="text-gray-600 text-lg mb-6">{c.description}</p>
-
-        <div className="bg-emergency-light border border-emergency/20 rounded-xl p-6 mb-10 text-center">
-          <p className="text-lg font-bold mb-2">Stranded in {c.name}?</p>
-          <p className="text-gray-700 mb-4">Call us — we&apos;re local and we respond fast.</p>
-          <Phone variant="hero" />
-        </div>
-
-        <section className="mb-10">
-          <TrustBadges />
-        </section>
-
-        {/* Social proof strip */}
-        <section className="mb-12">
-          <div className="bg-emergency-light border border-emergency/20 rounded-xl p-4 flex flex-wrap items-center justify-center gap-6 text-sm">
-            <span className="flex items-center gap-1.5 font-semibold text-gray-700">
-              <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-              4.9/5 — 50+ Google Reviews
-            </span>
-            <span className="text-gray-400 hidden sm:inline">|</span>
-            <span className="text-gray-600">&ldquo;Fastest response in Hemet&rdquo;</span>
-            <span className="text-gray-400 hidden sm:inline">|</span>
-            <span className="text-gray-600">Modern fleet, fair pricing</span>
-          </div>
-        </section>
-
-        {/* Neighborhoods */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-2">Towing in {c.name} Neighborhoods</h2>
-          <p className="text-gray-500 text-sm mb-6">We know these roads. Here&apos;s what to expect in each area.</p>
-          <div className="grid md:grid-cols-2 gap-4">
-            {c.neighborhoods.map((n) => (
-              <div key={n.name} className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-                <h3 className="font-bold text-gray-900 mb-1">{n.name}</h3>
-                <p className="text-xs text-gray-400 mb-2">Major roads: {n.roads}</p>
-                <p className="text-sm text-gray-600">{n.towing_note}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Services grid */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Our {c.name} Towing Services</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {services.map((s) => {
-              const iconName = serviceIconMap[s.slug] || "truck";
-              return (
-                <Link
-                  key={s.slug}
-                  href={`/cities/${city}/${s.slug}`}
-                  className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:border-emergency/30 hover:shadow-md transition group flex items-start gap-4"
-                >
-                  <div className="iconbox mt-0.5">{icons[iconName]}</div>
-                  <div>
-                    <h3 className="font-semibold mb-1 group-hover:text-emergency transition">
-                      {s.name} in {c.name}
-                    </h3>
-                    <p className="text-sm text-gray-500">Available 24/7 &rarr;</p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Area info */}
-        <section className="bg-gray-50 p-6 rounded-xl mb-12">
-          <h2 className="text-xl font-bold mb-3">About {c.name}, CA</h2>
-          <div className="grid sm:grid-cols-2 gap-4 text-sm text-gray-600">
-            <div>
-              <span className="font-semibold text-gray-900">County:</span> {c.county}
+      <main id="main-content">
+        {hero ? (
+          <section className="relative text-white py-16 md:py-24 overflow-hidden">
+            <div className="absolute inset-0">
+              <img src={`/images/${hero.filename}`} alt="" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/85 to-gray-900/70" />
             </div>
-            <div>
-              <span className="font-semibold text-gray-900">Population:</span> ~{c.population}
-            </div>
-            <div className="sm:col-span-2">
-              <span className="font-semibold text-gray-900">Nearby:</span>{" "}
-              {c.landmarks.join(", ")}
-            </div>
-          </div>
-        </section>
-
-        {/* Quote form */}
-        <section className="mb-12">
-          <div className="max-w-lg mx-auto">
-            <h2 className="text-2xl font-bold mb-4 text-center">Get a Free Quote</h2>
-            <p className="text-gray-600 text-center mb-6">
-              Tell us where you are in {c.name} and what you need.
-            </p>
-            <QuoteForm />
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-4">Towing in {c.name} — Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <div className="bg-white p-5 rounded-xl border border-gray-100">
-              <h3 className="font-semibold text-gray-900 mb-1">How fast can you get to {c.name}?</h3>
-              <p className="text-sm text-gray-600">We average 20-30 minute response times within {c.name} city limits. Emergency calls get priority dispatch.</p>
-            </div>
-            <div className="bg-white p-5 rounded-xl border border-gray-100">
-              <h3 className="font-semibold text-gray-900 mb-1">What areas of {c.name} do you cover?</h3>
-              <p className="text-sm text-gray-600">All of {c.name} — from downtown to the outer neighborhoods. We know every street and the shortcuts that get us there faster.</p>
-            </div>
-            <div className="bg-white p-5 rounded-xl border border-gray-100">
-              <h3 className="font-semibold text-gray-900 mb-1">How much does towing cost in {c.name}?</h3>
-              <p className="text-sm text-gray-600">Pricing depends on distance and vehicle type. Call us for a free quote — no hidden fees, no surprises.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Other cities */}
-        <section className="border-t border-gray-100 pt-8">
-          <h2 className="text-lg font-bold mb-4">Other Areas We Serve</h2>
-          <div className="flex flex-wrap gap-3">
-            {otherCities.map((oc) => (
-              <Link
-                key={oc.slug}
-                href={`/cities/${oc.slug}`}
-                className="px-4 py-2 bg-gray-50 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition"
-              >
-                {oc.name}
+            <div className="max-w-6xl mx-auto px-4 relative">
+              <Link href="/service-area" className="text-emergency-light text-sm mb-4 inline-block hover:underline opacity-80 hover:opacity-100 transition">
+                &larr; Service Area
               </Link>
-            ))}
-            <Link
-              href="/"
-              className="px-4 py-2 bg-emergency text-white rounded-lg text-sm font-bold hover:bg-emergency-dark transition"
-            >
-              Hemet (Main)
+              <h1 className="text-3xl md:text-4xl font-bold mt-2">
+                Towing in {c.name}, CA
+              </h1>
+              <p className="text-lg text-gray-300 max-w-2xl mt-3">{c.description}</p>
+              <div className="mt-6">
+                <Phone variant="hero" />
+              </div>
+            </div>
+          </section>
+        ) : (
+          <div className="max-w-4xl mx-auto px-4 py-12">
+            <Link href="/service-area" className="text-emergency text-sm mb-4 inline-block hover:underline">
+              &larr; Service Area
             </Link>
+            <h1 className="text-3xl md:text-4xl font-bold mb-3">
+              Towing in {c.name}, CA
+            </h1>
+            <p className="text-gray-600 text-lg mb-6">{c.description}</p>
+            <div className="bg-emergency-light border border-emergency/20 rounded-xl p-6 mb-10 text-center">
+              <p className="text-lg font-bold mb-2">Stranded in {c.name}?</p>
+              <p className="text-gray-700 mb-4">Call us — we&apos;re local and we respond fast.</p>
+              <Phone variant="hero" />
+            </div>
           </div>
-        </section>
+        )}
+
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          {/* Trust badges */}
+          <section className="mb-10">
+            <TrustBadges />
+          </section>
+
+          {/* Social proof strip */}
+          <section className="mb-12">
+            <div className="bg-emergency-light border border-emergency/20 rounded-xl p-4 flex flex-wrap items-center justify-center gap-6 text-sm">
+              <span className="flex items-center gap-1.5 font-semibold text-gray-700">
+                <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                4.9/5 — 50+ Google Reviews
+              </span>
+              <span className="text-gray-400 hidden sm:inline">|</span>
+              <span className="text-gray-600">&ldquo;Fastest response in Hemet&rdquo;</span>
+              <span className="text-gray-400 hidden sm:inline">|</span>
+              <span className="text-gray-600">Modern fleet, fair pricing</span>
+            </div>
+          </section>
+
+          {/* Neighborhoods */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-2">Towing in {c.name} Neighborhoods</h2>
+            <p className="text-gray-500 text-sm mb-6">We know these roads. Here&apos;s what to expect in each area.</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {c.neighborhoods.map((n) => (
+                <div key={n.name} className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+                  <h3 className="font-bold text-gray-900 mb-1">{n.name}</h3>
+                  <p className="text-xs text-gray-400 mb-2">Major roads: {n.roads}</p>
+                  <p className="text-sm text-gray-600">{n.towing_note}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Services grid */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-6">Our {c.name} Towing Services</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {services.map((s) => {
+                const iconName = serviceIconMap[s.slug] || "truck";
+                return (
+                  <Link
+                    key={s.slug}
+                    href={`/cities/${city}/${s.slug}`}
+                    className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:border-emergency/30 hover:shadow-md transition group flex items-start gap-4"
+                  >
+                    <div className="iconbox mt-0.5">{icons[iconName]}</div>
+                    <div>
+                      <h3 className="font-semibold mb-1 group-hover:text-emergency transition">
+                        {s.name} in {c.name}
+                      </h3>
+                      <p className="text-sm text-gray-500">Available 24/7 &rarr;</p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* Area info */}
+          <section className="bg-gray-50 p-6 rounded-xl mb-12">
+            <h2 className="text-xl font-bold mb-3">About {c.name}, CA</h2>
+            <div className="grid sm:grid-cols-2 gap-4 text-sm text-gray-600">
+              <div>
+                <span className="font-semibold text-gray-900">County:</span> {c.county}
+              </div>
+              <div>
+                <span className="font-semibold text-gray-900">Population:</span> ~{c.population}
+              </div>
+              <div className="sm:col-span-2">
+                <span className="font-semibold text-gray-900">Nearby:</span>{" "}
+                {c.landmarks.join(", ")}
+              </div>
+            </div>
+          </section>
+
+          {/* Quote form */}
+          <section className="mb-12">
+            <div className="max-w-lg mx-auto">
+              <h2 className="text-2xl font-bold mb-4 text-center">Get a Free Quote</h2>
+              <p className="text-gray-600 text-center mb-6">
+                Tell us where you are in {c.name} and what you need.
+              </p>
+              <QuoteForm />
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4">Towing in {c.name} — Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <div className="bg-white p-5 rounded-xl border border-gray-100">
+                <h3 className="font-semibold text-gray-900 mb-1">How fast can you get to {c.name}?</h3>
+                <p className="text-sm text-gray-600">We average 20-30 minute response times within {c.name} city limits. Emergency calls get priority dispatch.</p>
+              </div>
+              <div className="bg-white p-5 rounded-xl border border-gray-100">
+                <h3 className="font-semibold text-gray-900 mb-1">What areas of {c.name} do you cover?</h3>
+                <p className="text-sm text-gray-600">All of {c.name} — from downtown to the outer neighborhoods. We know every street and the shortcuts that get us there faster.</p>
+              </div>
+              <div className="bg-white p-5 rounded-xl border border-gray-100">
+                <h3 className="font-semibold text-gray-900 mb-1">How much does towing cost in {c.name}?</h3>
+                <p className="text-sm text-gray-600">Pricing depends on distance and vehicle type. Call us for a free quote — no hidden fees, no surprises.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Other cities */}
+          <section className="border-t border-gray-100 pt-8">
+            <h2 className="text-lg font-bold mb-4">Other Areas We Serve</h2>
+            <div className="flex flex-wrap gap-3">
+              {otherCities.map((oc) => (
+                <Link
+                  key={oc.slug}
+                  href={`/cities/${oc.slug}`}
+                  className="px-4 py-2 bg-gray-50 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition"
+                >
+                  {oc.name}
+                </Link>
+              ))}
+              <Link
+                href="/"
+                className="px-4 py-2 bg-emergency text-white rounded-lg text-sm font-bold hover:bg-emergency-dark transition"
+              >
+                Hemet (Main)
+              </Link>
+            </div>
+          </section>
+        </div>
       </main>
       <Footer />
     </>
