@@ -6,7 +6,7 @@ export function LocalBusinessSchema() {
       "@context": "https://schema.org",
       "@type": "TowingService",
       name: "Hemet Towing",
-      description: "24/7 emergency towing and roadside assistance serving Hemet, CA and surrounding areas.",
+      description: "24/7 emergency towing and roadside assistance serving Hemet, CA and the entire San Jacinto Valley.",
       url: "https://hemettowing.com",
       telephone: phone,
       areaServed: [
@@ -15,6 +15,11 @@ export function LocalBusinessSchema() {
         { "@type": "City", name: "Winchester" },
         { "@type": "City", name: "Menifee" },
         { "@type": "City", name: "Homeland" },
+        { "@type": "City", name: "East Hemet" },
+        { "@type": "City", name: "Valle Vista" },
+        { "@type": "City", name: "Sage" },
+        { "@type": "City", name: "Idyllwild" },
+        { "@type": "City", name: "Aguanga" },
       ],
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
@@ -23,6 +28,12 @@ export function LocalBusinessSchema() {
         closes: "23:59",
       },
       priceRange: "$$",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "50+",
+        bestRating: "5",
+      },
     }),
   };
 }

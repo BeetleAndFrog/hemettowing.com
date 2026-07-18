@@ -30,6 +30,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-emergency focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">
           Skip to main content
         </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "TowingService",
+              name: "Hemet Towing",
+              description: "24/7 emergency towing and roadside assistance serving Hemet, CA and the entire San Jacinto Valley.",
+              url: "https://hemettowing.com",
+              telephone: "(951) 777-9776",
+              areaServed: [
+                "Hemet", "San Jacinto", "Winchester", "Menifee", "Homeland",
+                "East Hemet", "Valle Vista", "Sage", "Idyllwild", "Aguanga",
+              ],
+              openingHours: "Mo-Su 00:00-23:59",
+              priceRange: "$$",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.9",
+                reviewCount: "50+",
+                bestRating: "5",
+              },
+            }),
+          }}
+        />
         <script src="https://stats.zkg.io/api/script.js" data-site-id="8317a9198032" defer />
         {children}
       </body>
