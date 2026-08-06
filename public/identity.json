@@ -1,0 +1,44 @@
+{
+  "@context": "https://schema.org",
+  "@type": "TowingService",
+  "name": "Hemet Towing",
+  "description": "24/7 emergency towing and roadside assistance serving Hemet, CA and the entire San Jacinto Valley. Fast response, fair pricing, and service you can count on at any hour.",
+  "url": "https://hemettowing.com",
+  "telephone": "+1-951-777-9776",
+  "priceRange": "$$",
+  "isAcceptingNewClients": true,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Hemet",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Hemet" },
+    { "@type": "City", "name": "San Jacinto" },
+    { "@type": "City", "name": "Winchester" },
+    { "@type": "City", "name": "Menifee" },
+    { "@type": "City", "name": "Homeland" },
+    { "@type": "City", "name": "East Hemet" },
+    { "@type": "City", "name": "Valle Vista" },
+    { "@type": "City", "name": "Sage" },
+    { "@type": "City", "name": "Idyllwild" },
+    { "@type": "City", "name": "Aguanga" }
+  ],
+  "serviceType": [
+    "Emergency Towing",
+    "Roadside Assistance",
+    "Long-Distance Towing",
+    "Motorcycle Towing",
+    "Heavy-Duty Towing"
+  ],
+  "knowsAbout": [
+    "Emergency Towing",
+    "Roadside Assistance",
+    "Long-Distance Towing",
+    "Motorcycle Towing",
+    "Heavy-Duty Towing",
+    "Tire Change",
+    "Battery Jump Start"
+  ]
+}
